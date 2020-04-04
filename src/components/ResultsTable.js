@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
 
-const SRTable = Styled.div`
+const StyledResultsTable = Styled.div`
   display: block;
   width: 782px;
   height: 420px;
@@ -13,8 +13,8 @@ const SRTable = Styled.div`
 
 export default function ResultsTable() {
   return (
-    <SRTable>
+    <StyledResultsTable>
       Results Table Component
-    </SRTable>
+    </StyledResultsTable>
   );
 }

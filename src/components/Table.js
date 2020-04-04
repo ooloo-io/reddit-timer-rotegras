@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
 
-const STable = Styled.div`
+const StyledTable = Styled.div`
   display: block;
   width: 1115px;
   height: 333px;
@@ -12,8 +12,8 @@ const STable = Styled.div`
 
 export default function Table() {
   return (
-    <STable>
+    <StyledTable>
       Table Component
-    </STable>
+    </StyledTable>
   );
 }

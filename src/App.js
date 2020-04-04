@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Header from './components/Header/Header';
 import Search from './pages/Search';
 import HowItWorks from './pages/HowItWorks';
-import './App.css';
 
 function App() {
   return (
