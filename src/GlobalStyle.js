@@ -16,11 +16,6 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
-  .appwrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-
   .page {
     display: flex;
     flex-direction: column;
