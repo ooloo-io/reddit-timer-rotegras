@@ -5,11 +5,12 @@ import Styled from 'styled-components';
 const StyledButton = Styled.button`
   background-color: #fdb755;
   color: #fff;
-  padding: 10px 20px;
-  margin-top: 26px;
   border: none;
-  text-transform: uppercase;
   border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 11px 15px 10px 15px;
 `;
 
 export default function Button({ text }) {

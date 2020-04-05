@@ -8,12 +8,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     font-size: 16px;
-    height: 100%;
+    overflow-y: scroll;
   }
 
   html,
   body {
-    height: 100%;
+    min-height: 100vh;
   }
 
   .page {
@@ -22,13 +22,13 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    padding-top: 22px;
   }
 
   h1 {
     font: 400 38px/1 Bitter, serif;
     color: #000;
-    margin: 20px;
-    padding-top: 17px;
+    margin: 10px;
   }
 
   .subtitle {
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     text-align: center;
     color: #93918f;
-    margin: 20px;
+    margin: 15px auto 45px;
   }
 `;
 
