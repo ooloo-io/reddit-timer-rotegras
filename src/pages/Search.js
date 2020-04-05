@@ -7,16 +7,19 @@ import ResultsTable from '../components/ResultsTable';
 const SearchGroup = Styled.form`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  height: 56px;
+  margin-top: 22px;
 `;
 
 const Input = Styled.input`
   display: flex;
   flex-direction: row;
-  height: 34px;
-  margin-right: 10px;
-  width: 370px;
+  height: 322x;
+  width: 355px;
+  font-size: 14px;
+  padding-left: 15px;
+  margin: 0 10px 0 28px;
+  border-radius: 2px;
+  border: solid 1px #e6e6e6;
 `;
 
 export default function Search() {

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <section className="page">
       <h1>
-        No reactions to your Reddit posts?
+        No reactions to your reddit posts?
       </h1>
       <div className="subtitle">
         Great timing, great results! Find the best time to post on your subreddit.

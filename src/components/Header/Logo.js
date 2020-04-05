@@ -5,6 +5,7 @@ import { ReactComponent as NavLogo } from './logo.svg';
 
 const StyledLogo = Styled.div`
   font-weight: 700;
+  margin-top: 5px;
 `;
 
 export default function Logo() {

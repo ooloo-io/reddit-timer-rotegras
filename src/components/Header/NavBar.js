@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 
 
@@ -12,27 +11,22 @@ const StyledNavBar = Styled.nav`
 
 const StyledLink = Styled(Link)`
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;;
   text-decoration: none;
-  margin: 0 0 0 25px;
+  margin: 1px 0 0 26px;
   color: #636363;
+  &:first-child {
+    margin-right: .25px;
+  }
 `;
 
 
-export default function NavBar({ searchPath }) {
+export default function NavBar() {
   return (
     <StyledNavBar>
-      <StyledLink to={`/search/${searchPath}`}>Search</StyledLink>
+      <StyledLink to="/search/javascript">Search</StyledLink>
       <StyledLink to="/how-it-works">How it works</StyledLink>
       <StyledLink to="/about">About</StyledLink>
     </StyledNavBar>
   );
 }
-
-NavBar.propTypes = {
-  searchPath: PropTypes.string,
-};
-
-NavBar.defaultProps = {
-  searchPath: 'javascript',
-};

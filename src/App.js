@@ -12,7 +12,7 @@ import HowItWorks from './pages/HowItWorks';
 
 function App() {
   return (
-    <>
+    <div className="appwrapper">
       <Router>
         <Header />
         <Switch>
@@ -30,7 +30,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 
