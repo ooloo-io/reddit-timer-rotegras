@@ -15,6 +15,7 @@ const StyledLink = Styled(Link)`
   text-decoration: none;
   margin: 1px 0 0 26px;
   color: #636363;
+
   &:first-child {
     margin-right: .25px;
   }

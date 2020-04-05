@@ -8,21 +8,24 @@ const GlobalStyle = createGlobalStyle`
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     font-size: 16px;
-    overflow-y: scroll;
   }
 
   html,
   body {
-    min-height: 100vh;
+    height: 100%;
+    width: 100%;
   }
 
   .page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
-    padding-top: 22px;
+    position: relative;
+    min-height: 100vh;
+    padding: 22px 0 100px;
+    box-sizing: border-box;
   }
 
   h1 {
@@ -37,6 +40,11 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     color: #93918f;
     margin: 15px auto 45px;
+  }
+
+  a {
+    font-weight: 400;
+    text-decoration: none;
   }
 `;
 
