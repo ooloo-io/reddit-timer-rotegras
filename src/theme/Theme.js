@@ -7,6 +7,7 @@ const theme = {
     black: '#000',
     white: '#fff',
     greyLight: '#e6e6e6',
+    greyMedium: '#93918f',
     greyDark: '#636363',
     buttonBg: '#fdb755',
   },

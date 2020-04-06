@@ -19,6 +19,10 @@ const StyledFooterLink = Styled(Link)`
   font-size: ${({ theme }) => theme.textsize.smaller};
   color: ${({ theme }) => theme.colors.greyDark} ;
   letter-spacing: .6px;
+
+  &:last-child {
+    padding-bottom: 3px;
+  };
 `;
 
 const StyledFooterLogo = Styled(Link)`

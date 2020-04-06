@@ -14,12 +14,14 @@ export default function TextField({
   elem,
   mt,
   mb,
+  ml,
 }) {
   return (
     <Text
       as={elem}
       mt={mt}
       mb={mb}
+      ml={ml}
       align={align}
     >
       {children}
@@ -33,6 +35,7 @@ TextField.propTypes = {
   elem: PropTypes.string,
   mt: PropTypes.string,
   mb: PropTypes.string,
+  ml: PropTypes.string,
 };
 
 TextField.defaultProps = {
@@ -40,4 +43,5 @@ TextField.defaultProps = {
   elem: 'div',
   mt: '0',
   mb: '0',
+  ml: '0',
 };

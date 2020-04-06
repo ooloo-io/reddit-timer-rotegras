@@ -30,12 +30,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${({ theme }) => theme.textsize.big}
+    font-size: ${({ theme }) => theme.textsize.big};
     color: ${({ theme }) => theme.colors.black};
   }
 
   a {
     text-decoration: none;
+  }
+
+  p {
+    color: ${({ theme }) => theme.colors.greyMedium};
   }
 `;
 

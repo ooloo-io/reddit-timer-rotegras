@@ -1,8 +1,8 @@
 import React from 'react';
 import Styled from 'styled-components';
 import Button from '../components/Button';
-import Page from '../theme/Page';
-import Table from '../components/Table';
+import Page from '../components/Page';
+import HeatMap from '../components/HeatMap/HeatMap';
 import ResultsTable from '../components/ResultsTable';
 
 const SearchGroup = Styled.form`
@@ -38,7 +38,7 @@ export default function Search() {
           type="submit"
         />
       </SearchGroup>
-      <Table />
+      <HeatMap />
       <ResultsTable />
     </Page>
   );
