@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     width: 100%;
+    color: ${({ theme }) => theme.colors.greyMedium};
   }
 
   body {
@@ -36,10 +37,6 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-  }
-
-  p {
-    color: ${({ theme }) => theme.colors.greyMedium};
   }
 `;
 

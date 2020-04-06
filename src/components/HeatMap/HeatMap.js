@@ -2,6 +2,7 @@ import React from 'react';
 import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import table from './table.png';
+import config from '../../config';
 
 
 const StyledTable = Styled.div`
@@ -17,7 +18,7 @@ const StyledImg = Styled.img`
 export default function Table() {
   return (
     <StyledTable>
-      <Link to="/search/javascript">
+      <Link to={`/search/${config.defaultReddit}`}>
         <StyledImg src={table} alt="reddit heatmap" />
       </Link>
     </StyledTable>

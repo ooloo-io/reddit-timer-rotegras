@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
+import config from '../../config';
 
 
 const StyledNavBar = Styled.nav`
@@ -25,7 +26,7 @@ const StyledLink = Styled(Link)`
 export default function NavBar() {
   return (
     <StyledNavBar>
-      <StyledLink to="/search/javascript">Search</StyledLink>
+      <StyledLink to={`/search/${config.defaultReddit}`}>Search</StyledLink>
       <StyledLink to="/how-it-works">How it works</StyledLink>
       <StyledLink to="/about">About</StyledLink>
     </StyledNavBar>
