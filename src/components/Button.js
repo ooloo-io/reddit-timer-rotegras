@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 
 const StyledButton = Styled.button`
-  background-color: #fdb755;
+  background: ${({ theme }) => theme.colors.buttonBg};
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.textsize.small};
   font-weight: 500;
+  width: auto;
   text-transform: uppercase;
   padding: 11px 15px 10px 15px;
 `;

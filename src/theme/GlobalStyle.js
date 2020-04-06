@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: Montserrat, sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
   }
 
@@ -16,21 +16,17 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
-  .page {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-grow: 1;
-    position: relative;
-    min-height: 100vh;
-    padding: 22px 0 100px;
+  body {
+    overflow-y: scroll;
+  }
+
+  * {
     box-sizing: border-box;
   }
 
   h1 {
     font: 400 38px/1 Bitter, serif;
-    color: #000;
+    color: ${({ theme }) => theme.colors.black};
     margin: 10px;
   }
 
@@ -43,7 +39,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    font-weight: 400;
     text-decoration: none;
   }
 `;

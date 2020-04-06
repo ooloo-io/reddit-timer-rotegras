@@ -4,17 +4,17 @@ import Styled from 'styled-components';
 
 
 const StyledNavBar = Styled.nav`
+  position: relative;
   display: flex;
+  flex-direction: row;
   align-items: center;
   height: 100px;
 `;
 
 const StyledLink = Styled(Link)`
-  font-weight: 400;
-  font-size: 16px;;
-  text-decoration: none;
+  font-size: ${({ theme }) => theme.textsize.body};
+  color: ${({ theme }) => theme.colors.greyDark};
   margin: 1px 0 0 26px;
-  color: #636363;
 
   &:first-child {
     margin-right: .25px;

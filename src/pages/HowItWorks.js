@@ -1,11 +1,12 @@
 import React from 'react';
+import Page from '../theme/Page';
 
 export default function HowItWorks() {
   return (
-    <section className="page">
+    <Page>
       <h1>
         How it works
       </h1>
-    </section>
+    </Page>
   );
 }
