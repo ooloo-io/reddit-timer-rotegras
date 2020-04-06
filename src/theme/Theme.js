@@ -10,6 +10,10 @@ const theme = {
     greyDark: '#636363',
     buttonBg: '#fdb755',
   },
+  fonts: {
+    primary: 'Montserrat',
+    secondary: 'Bitter',
+  },
   textsize: {
     big: '38px',
     body: '16px',
@@ -22,7 +26,7 @@ const theme = {
     flexDirection: 'column',
     alignItems: 'center',
     minHeight: '100vh',
-    padding: '122px 0 100px 0',
+    padding: '100px 0',
     textAlign: 'center',
   },
 };

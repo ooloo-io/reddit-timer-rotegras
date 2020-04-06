@@ -24,18 +24,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  h1 {
-    font: 400 38px/1 Bitter, serif;
-    color: ${({ theme }) => theme.colors.black};
-    margin: 10px;
+  h1, h2, h3 ,h4, h5, h6 {
+    font-family: Bitter, serif;
+    font-weight: 400;
   }
 
-  .subtitle {
-    font-size: 1rem;
-    font-weight: 400;
-    text-align: center;
-    color: #93918f;
-    margin: 15px auto 45px;
+  h1 {
+    font-size: ${({ theme }) => theme.textsize.big}
+    color: ${({ theme }) => theme.colors.black};
   }
 
   a {
