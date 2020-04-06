@@ -20,26 +20,22 @@ const StyledFooterLink = Styled(Link)`
   letter-spacing: .6px;
 `;
 
-const StyledA = Styled.a`
-  font-size: 13px;;
-  color: #636363;
-  letter-spacing: .6px;
-`;
-
 const StyledFooterLogo = Styled(Link)`
     margin-left: 55px;
 `;
 
+
 export default function Footer() {
   return (
     <StyledFooter>
-      <StyledA
+      <StyledFooterLink
+        as="a"
         href="https://www.ooloo.io"
         target="_blank"
         rel="noopener no-referrer"
       >
         ooloo.io
-      </StyledA>
+      </StyledFooterLink>
 
       <StyledFooterLogo to="/">
         <FooterLogo />
