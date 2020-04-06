@@ -19,7 +19,6 @@ const StyledWrapper = Styled.div`
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    overflow-x: hidden;
 `;
 
 function App() {

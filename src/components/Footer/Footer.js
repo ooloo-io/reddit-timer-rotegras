@@ -22,7 +22,8 @@ const StyledFooterLink = Styled(Link)`
 `;
 
 const StyledFooterLogo = Styled(Link)`
-    margin-left: 55px;
+    margin-left: 56px;
+    margin-top: 1px;
 `;
 
 
