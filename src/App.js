@@ -39,8 +39,8 @@ function App() {
             <HowItWorks />
           </Route>
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </StyledWrapper>
   );
 }

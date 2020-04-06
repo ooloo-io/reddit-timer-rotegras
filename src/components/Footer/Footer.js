@@ -1,7 +1,8 @@
 import React from 'react';
 import Styled from 'styled-components';
-// import { ReactComponent as FooterLogo } from '../Header/logo.svg';
+import { Link } from 'react-router-dom';
 import { ReactComponent as FooterLogo } from './sign.svg';
+
 
 const StyledFooter = Styled.footer`
   display: flex;
@@ -11,34 +12,42 @@ const StyledFooter = Styled.footer`
   height: 100px;
   padding: 0 250px;
   box-sizing: border-box;
-
-  a.footer-link {
-    font-size: 13px;
-    letter-spacing: .6px;
-    color: #636363;
-  }
-
-  .footer-logo {
-    margin-left: 55px;
-  }
 `;
 
+const StyledFooterLink = Styled(Link)`
+  font-size: 13px;;
+  color: #636363;
+  letter-spacing: .6px;
+`;
+
+const StyledA = Styled.a`
+  font-size: 13px;;
+  color: #636363;
+  letter-spacing: .6px;
+`;
+
+const StyledFooterLogo = Styled(Link)`
+    margin-left: 55px;
+`;
 
 export default function Footer() {
   return (
     <StyledFooter>
-      <a
-        className="footer-link"
+      <StyledA
         href="https://www.ooloo.io"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener no-referrer"
       >
         ooloo.io
-      </a>
-      <a className="footer-link footer-logo" href="/">
+      </StyledA>
+
+      <StyledFooterLogo to="/">
         <FooterLogo />
-      </a>
-      <a className="footer-link" href="/terms-and-privacy">Terms & Privacy</a>
+      </StyledFooterLogo>
+
+      <StyledFooterLink to="/terms-and-privacy">
+        Terms & Privacy
+      </StyledFooterLink>
     </StyledFooter>
   );
 }
