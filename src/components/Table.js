@@ -7,7 +7,7 @@ const StyledTable = Styled.div`
   height: 333px;
   background-color: #eee;
   padding: 1rem;
-  margin-top: 102px;
+  margin: 102px auto 0;
 `;
 
 export default function Table() {

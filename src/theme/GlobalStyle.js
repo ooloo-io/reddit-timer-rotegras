@@ -6,28 +6,27 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: Montserrat, sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
-    overflow-y: scroll;
   }
 
   html,
   body {
-    min-height: 100vh;
+    height: 100%;
+    width: 100%;
   }
 
-  .page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding-top: 22px;
+  body {
+    overflow-y: scroll;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   h1 {
     font: 400 38px/1 Bitter, serif;
-    color: #000;
+    color: ${({ theme }) => theme.colors.black};
     margin: 10px;
   }
 
@@ -37,6 +36,10 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     color: #93918f;
     margin: 15px auto 45px;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
