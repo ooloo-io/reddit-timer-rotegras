@@ -6,6 +6,7 @@ import config from '../../config';
 
 
 const StyledTable = Styled.div`
+  margin-bottom: 45px;
   // to be modified;
 `;
 
