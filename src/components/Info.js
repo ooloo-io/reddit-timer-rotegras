@@ -10,7 +10,7 @@ const StyledInfo = Styled.section`
   border: 1px solid transparent;
 
   &:last-child {
-    margin-bottom: 100px;
+    margin-bottom: 98px;
   }
 `;
 
