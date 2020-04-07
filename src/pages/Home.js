@@ -20,30 +20,35 @@ const StyledSubline = Styled.p`
   margin: 10.5px auto 45px;
 `;
 
+const StyledText = Styled.div`
+  line-height: 1.69;
+  margin: 0;
+`;
 
-const infoContent = [
-  {
-    title: 'How it works',
-    text: [
-      '• We find the 500 top posts from the past year for a subreddit.',
-      '• The data is visualized in a heatmap grouped by weekday and hour of the day.',
-      '• See immediately when to submit your reddit post.',
-    ],
-  },
-  {
-    title: 'About',
-    text: [
-      'This app was created during a course on & nbsp;'
-      + '<a href = "https://www.ooloo.io" target = "_blank" rel ="noopener no-referrer">'
-      + 'ooloo.io</a>&nbsp; with the goal to implement '
-      + 'a pixel-perfect real-world application with professional '
-      + 'workflows and tools like Kanban, Asana, Zeplin, GitHub, pull '
-      + 'requests and code reviews. &nbsp; '
-      + '<a href="https://www.ooloo.io/employers"target="_blank" rel="noopener no-referrer">'
-      + 'Click here for more information.</a>',
-    ],
-  },
-];
+const StyledP = Styled.p`
+  margin: 0;
+`;
+
+const StyledP2 = Styled.p`
+  margin: 0;
+  line-height: 1.70;
+  letter-spacing: 0.03px;
+
+  &:first-child {
+    margin-top: 15px;
+  }
+`;
+
+const StyledA = Styled.a`
+  letter-spacing: -.1px
+  margin-left: -.5px;
+  margin-right: -5px;
+`;
+
+const StyledA2 = Styled.a`
+  letter-spacing: .06px;
+  margin-left: 4px;
+`;
 
 export default function Home() {
   return (
@@ -66,15 +71,40 @@ export default function Home() {
 
       <HeatMap />
 
-      <Info
-        title={infoContent[0].title}
-        text={infoContent[0].text}
-      />
+      <Info title="How it works">
+        <StyledText>
+          <StyledP>
+            • We find the 500 top posts from the past year for a subreddit.
+          </StyledP>
+          <StyledP>
+            • The data is visualized in a heatmap grouped by weekday and hour of the day.
+          </StyledP>
+          <StyledP>
+            • See immediately when to submit your reddit post.
+          </StyledP>
+        </StyledText>
+      </Info>
 
-      <Info
-        title={infoContent[1].title}
-        text={infoContent[1].text}
-      />
+      <Info title="About">
+        <StyledText>
+          <StyledP2>
+            This app was created during a course on&nbsp;
+            <StyledA href="https://www.ooloo.io">
+              ooloo.io
+            </StyledA>
+            &nbsp; with the goal to implement a pixel-perfect
+          </StyledP2>
+          <StyledP2>
+            real-world application with professional workflows and tools like Kanban, Asana, Zeplin,
+          </StyledP2>
+          <StyledP2>
+            GitHub, pull requests and code reviews.
+            <StyledA2 href="https://www.ooloo.io">
+              Click here for more information.
+            </StyledA2>
+          </StyledP2>
+        </StyledText>
+      </Info>
     </Page>
   );
 }

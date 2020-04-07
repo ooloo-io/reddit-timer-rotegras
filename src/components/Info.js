@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 
 const StyledInfo = Styled.section`
-  width: 738px;
-  margin: 55px auto 20px;
-  padding-right: 0p;
+  width: 758px;
+  margin: 55px auto 19px;
+  padding: 0 0 0 10px;
   text-align: left;
+  border: 1px solid transparent;
 
   &:last-child {
     margin-bottom: 100px;
@@ -17,30 +18,22 @@ const StyledTitle = Styled.h3`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.textsize.medium};
   font-weight: 400;
-  margin-bottom: 14px;
-  margin: 30px auto 14px 1px;
-`;
-
-const StyledText = Styled.p`
-  line-height: 1.69;
-  margin: 0;
+  margin: 30px auto 12px 1px;
 `;
 
 
-export default function Info({ title, text }) {
+export default function Info({ title, children }) {
   return (
     <StyledInfo>
       <StyledTitle>
         {title}
       </StyledTitle>
-
-      {text.map((item) => <StyledText>{item}</StyledText>)}
-
+      {children}
     </StyledInfo>
   );
 }
 
 Info.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.arrayOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
 };
