@@ -1,22 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Styled from 'styled-components';
 import Button from '../components/Button';
-import Page from '../theme/Page';
-import Table from '../components/Table';
+import HeatMap from '../components/HeatMap/HeatMap';
+import Page from '../components/Page';
+import RedditTopic from '../components/RedditTopic';
+import config from '../config';
+
+
+const StyledHeadline = Styled.h1`
+  color: ${({ theme }) => theme.colors.black};
+  text-align: center;
+  margin: 30px auto 10px;
+`;
+
+const StyledSubline = Styled.p`
+  text-align: center;
+  margin: 10.5px auto 45px;
+`;
 
 
 export default function Home() {
   return (
     <Page>
-      <h1>
+      <StyledHeadline>
         No reactions to your reddit posts?
-      </h1>
-      <div className="subtitle">
+      </StyledHeadline>
+
+      <StyledSubline>
         Great timing, great results! Find the best time to post on your subreddit.
-      </div>
-      <Button
-        text="SHOW ME THE BEST TIME"
-      />
-      <Table />
+      </StyledSubline>
+
+      <Link to={`/search/${config.defaultReddit}`}>
+        <Button
+          text="SHOW ME THE BEST TIME"
+        />
+      </Link>
+      <RedditTopic />
+      <HeatMap />
     </Page>
   );
 }
