@@ -10,6 +10,7 @@ const theme = {
     greyMedium: '#93918f',
     greyDark: '#636363',
     buttonBg: '#fdb755',
+    link: '#0087ff',
   },
   fonts: {
     primary: 'Montserrat',

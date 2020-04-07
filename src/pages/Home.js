@@ -1,20 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Styled from 'styled-components';
 import Button from '../components/Button';
 import HeatMap from '../components/HeatMap/HeatMap';
 import Page from '../components/Page';
 import RedditTopic from '../components/RedditTopic';
-import {
-  StyledHeadline,
-  StyledInfo,
-  StyledLink,
-  StyledParagraph,
-  StyledSubline,
-  StyledTitle,
-  StyledText,
-} from './Home_styles';
+import Info from '../components/Info';
 import config from '../config';
 
+
+const StyledHeadline = Styled.h1`
+  color: ${({ theme }) => theme.colors.black};
+  text-align: center;
+  margin: 30px auto 10px;
+`;
+
+const StyledSubline = Styled.p`
+  text-align: center;
+  margin: 10.5px auto 45px;
+`;
+
+
+const infoContent = [
+  {
+    title: 'How it works',
+    text: [
+      '• We find the 500 top posts from the past year for a subreddit.',
+      '• The data is visualized in a heatmap grouped by weekday and hour of the day.',
+      '• See immediately when to submit your reddit post.',
+    ],
+  },
+  {
+    title: 'About',
+    text: [
+      'This app was created during a course on & nbsp;'
+      + '<a href = "https://www.ooloo.io" target = "_blank" rel ="noopener no-referrer">'
+      + 'ooloo.io</a>&nbsp; with the goal to implement '
+      + 'a pixel-perfect real-world application with professional '
+      + 'workflows and tools like Kanban, Asana, Zeplin, GitHub, pull '
+      + 'requests and code reviews. &nbsp; '
+      + '<a href="https://www.ooloo.io/employers"target="_blank" rel="noopener no-referrer">'
+      + 'Click here for more information.</a>',
+    ],
+  },
+];
 
 export default function Home() {
   return (
@@ -37,60 +66,15 @@ export default function Home() {
 
       <HeatMap />
 
-      <StyledInfo>
-        <StyledTitle>
-          How it works
-        </StyledTitle>
+      <Info
+        title={infoContent[0].title}
+        text={infoContent[0].text}
+      />
 
-        <StyledParagraph>
-          <StyledText>
-            • We find the 500 top posts from the past year for a subreddit.
-          </StyledText>
-          <StyledText>
-            • The data is visualized in a heatmap grouped by weekday and hour of the day.
-          </StyledText>
-          <StyledText>
-            • See immediately when to submit your reddit post.
-          </StyledText>
-        </StyledParagraph>
-      </StyledInfo>
-
-      <StyledInfo>
-        <StyledTitle>
-          About
-        </StyledTitle>
-
-        <StyledParagraph>
-          <StyledText>
-            This app was created during a course on &nbsp;
-            <StyledLink
-              as="a"
-              href="https://www.ooloo.io"
-              target="_blank"
-              rel="noopener no-referrer"
-            >
-              ooloo.io
-            </StyledLink>
-              &nbsp; with the goal to implement a pixel-perfect
-          </StyledText>
-          <StyledText>
-            real-world application
-            with professional workflows and tools like Kanban, Asana, Zeplin,
-          </StyledText>
-          <StyledText>
-            GitHub, pull requests and code reviews. &nbsp;
-            <StyledLink
-              as="a"
-              href="https://www.ooloo.io/employers"
-              target="_blank"
-              rel="noopener no-referrer"
-            >
-              Click here for more information.
-            </StyledLink>
-          </StyledText>
-        </StyledParagraph>
-      </StyledInfo>
-
+      <Info
+        title={infoContent[1].title}
+        text={infoContent[1].text}
+      />
     </Page>
   );
 }
