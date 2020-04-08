@@ -1,50 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Styled from 'styled-components';
-import Button from '../components/Button';
-import HeatMap from '../components/HeatMap/HeatMap';
-import Headline from '../components/Headline';
-import Page from '../components/Page';
-import RedditTopic from '../components/RedditTopic';
-import Info from '../components/Info';
-import config from '../config';
-
-
-
-const StyledSubline = Styled.p`
-  text-align: center;
-  margin: 10.5px auto 45px;
-`;
-
-const StyledText = Styled.div`
-  line-height: 1.69;
-  margin: 0;
-`;
-
-const StyledP = Styled.p`
-  margin: 0;
-`;
-
-const StyledP2 = Styled.p`
-  margin: 0;
-  line-height: 1.70;
-  letter-spacing: 0.03px;
-
-  &:first-child {
-    margin-top: 15px;
-  }
-`;
-
-const StyledA = Styled.a`
-  letter-spacing: -.1px
-  margin-left: -.5px;
-  margin-right: -5px;
-`;
-
-const StyledA2 = Styled.a`
-  letter-spacing: .06px;
-  margin-left: 4px;
-`;
+import Button from '../../components/Button';
+import HeatMap from '../../components/HeatMap/HeatMap';
+import Headline from '../../components/Headline';
+import Page from '../../components/Page';
+import RedditTopic from '../../components/RedditTopic';
+import Info from '../../components/Info';
+import config from '../../config';
+import {
+  StyledSubline,
+  StyledA,
+  StyledA2,
+  StyledText,
+  StyledP,
+  StyledP2,
+  ButtonWrapper,
+} from './Home.styles';
 
 export default function Home() {
   return (
@@ -57,11 +27,13 @@ export default function Home() {
         Great timing, great results! Find the best time to post on your subreddit.
       </StyledSubline>
 
-      <Link to={`/search/${config.defaultReddit}`}>
+      <ButtonWrapper>
         <Button
+          path={`/search/${config.defaultReddit}`}
           text="SHOW ME THE BEST TIME"
         />
-      </Link>
+
+      </ButtonWrapper>
 
       <RedditTopic />
 

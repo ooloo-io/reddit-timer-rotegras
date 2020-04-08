@@ -12,8 +12,11 @@ export default function Search() {
       <Headline>
         Find the best time for a subreddit
       </Headline>
+
       <InputForm />
+
       <HeatMap />
+
       <ResultsTable />
     </Page>
   );

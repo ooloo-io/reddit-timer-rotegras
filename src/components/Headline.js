@@ -10,7 +10,7 @@ const StyledHeadline = Styled.h1`
 `;
 
 
-export default function Headline({children}) {
+export default function Headline({ children }) {
   return (
     <StyledHeadline>
       {children}
@@ -20,4 +20,4 @@ export default function Headline({children}) {
 
 Headline.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};

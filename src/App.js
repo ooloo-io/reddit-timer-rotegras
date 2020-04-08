@@ -7,7 +7,7 @@ import {
 import Styled from 'styled-components';
 import About from './pages/About';
 import Footer from './components/Footer/Footer';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import Search from './pages/Search';
 import HowItWorks from './pages/HowItWorks';
