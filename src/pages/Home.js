@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
 import Button from '../components/Button';
 import HeatMap from '../components/HeatMap/HeatMap';
+import Headline from '../components/Headline';
 import Page from '../components/Page';
 import RedditTopic from '../components/RedditTopic';
 import config from '../config';
 
 
-const StyledHeadline = Styled.h1`
-  color: ${({ theme }) => theme.colors.black};
-  text-align: center;
-  margin: 30px auto 10px;
-`;
 
 const StyledSubline = Styled.p`
   text-align: center;
@@ -23,9 +19,9 @@ const StyledSubline = Styled.p`
 export default function Home() {
   return (
     <Page>
-      <StyledHeadline>
+      <Headline>
         No reactions to your reddit posts?
-      </StyledHeadline>
+      </Headline>
 
       <StyledSubline>
         Great timing, great results! Find the best time to post on your subreddit.
