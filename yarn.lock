@@ -7040,11 +7040,6 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
-
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -8557,6 +8552,11 @@ react-app-polyfill@^1.0.6:
     raf "^3.4.1"
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
+
+react-dangerous-html@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-dangerous-html/-/react-dangerous-html-1.0.0.tgz#24e443d156a4fc5e61467179cda319145aa3a7e1"
+  integrity sha512-OMi5HF1WN7nw/djRHepn9yIMYRafAg3FlBdXgh6bdvq/hnZ/p0fMHyL77o7uM9xctEu9t1p2qMSf2yOmPNrlVw==
 
 react-dev-utils@^10.2.0:
   version "10.2.0"

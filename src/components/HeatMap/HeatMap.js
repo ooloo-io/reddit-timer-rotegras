@@ -6,7 +6,7 @@ import config from '../../config';
 
 
 const StyledTable = Styled.div`
-  // to be modified;
+  margin-bottom: 45px;
 `;
 
 const StyledImg = Styled.img`
