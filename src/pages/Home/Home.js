@@ -1,15 +1,13 @@
 import React from 'react';
-import Button from '../../components/Button';
 import HeatMap from '../../components/HeatMap/HeatMap';
 import Headline from '../../components/Headline';
 import Page from '../../components/Page';
 import RedditTopic from '../../components/RedditTopic';
 import InfoSection from '../../components/InfoSection/InfoSection';
 import config from '../../config';
-import {
-  StyledSubline,
-  ButtonWrapper,
-} from './Home.styles';
+import StyledSubline from './Home.styles';
+import Button from '../../components/Button/Button';
+
 
 export default function Home() {
   return (
@@ -22,13 +20,10 @@ export default function Home() {
         Great timing, great results! Find the best time to post on your subreddit.
       </StyledSubline>
 
-      <ButtonWrapper>
-        <Button
+      <Button
           path={`/search/${config.defaultReddit}`}
           text="SHOW ME THE BEST TIME"
         />
-
-      </ButtonWrapper>
 
       <RedditTopic />
 

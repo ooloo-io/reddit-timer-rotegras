@@ -1,11 +1,8 @@
 import React from 'react';
 import InfoBlock from './InfoBlock';
 import {
-  StyledLink,
-  StyledLink2,
   StyledText,
   StyledParagraph,
-  StyledParagraph2,
 } from './InfoSection.styles';
 
 
@@ -28,22 +25,22 @@ export default function InfoSection() {
 
       <InfoBlock title="About">
         <StyledText>
-          <StyledParagraph2>
-            This app was created during a course on&nbsp;
-            <StyledLink href="https://www.ooloo.io">
+          <StyledParagraph>
+            This app was created during a course on{' '}
+            <a href="https://www.ooloo.io">
               ooloo.io
-            </StyledLink>
-            &nbsp; with the goal to implement a pixel-perfect
-          </StyledParagraph2>
-          <StyledParagraph2>
+            </a>
+            {' '}with the goal to implement a pixel-perfect
+          </StyledParagraph>
+          <StyledParagraph>
             real-world application with professional workflows and tools like Kanban, Asana, Zeplin,
-          </StyledParagraph2>
-          <StyledParagraph2>
-            GitHub, pull requests and code reviews.
-            <StyledLink2 href="https://www.ooloo.io">
+          </StyledParagraph>
+          <StyledParagraph>
+            GitHub, pull requests and code reviews.&nbsp;
+            <a href="https://www.ooloo.io">
               Click here for more information.
-            </StyledLink2>
-          </StyledParagraph2>
+            </a>
+          </StyledParagraph>
         </StyledText>
       </InfoBlock>
     </>

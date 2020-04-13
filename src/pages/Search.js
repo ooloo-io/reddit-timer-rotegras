@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '../components/Page';
 import HeatMap from '../components/HeatMap/HeatMap';
 import ResultsTable from '../components/ResultsTable';
-import InputForm from '../components/InputForm';
+import InputForm from '../components/InputForm/InputForm';
 import Headline from '../components/Headline';
 
 
