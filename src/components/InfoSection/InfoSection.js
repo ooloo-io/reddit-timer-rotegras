@@ -26,11 +26,13 @@ export default function InfoSection() {
       <InfoBlock title="About">
         <StyledText>
           <StyledParagraph>
-            This app was created during a course on{' '}
+            This app was created during a course on
+            {' '}
             <a href="https://www.ooloo.io">
               ooloo.io
             </a>
-            {' '}with the goal to implement a pixel-perfect
+            {' '}
+            with the goal to implement a pixel-perfect
           </StyledParagraph>
           <StyledParagraph>
             real-world application with professional workflows and tools like Kanban, Asana, Zeplin,

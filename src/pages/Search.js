@@ -3,7 +3,7 @@ import Page from '../components/Page';
 import HeatMap from '../components/HeatMap/HeatMap';
 import ResultsTable from '../components/ResultsTable';
 import InputForm from '../components/InputForm/InputForm';
-import Headline from '../components/Headline';
+import Headline from '../components/Headline/Headline';
 
 
 export default function Search() {

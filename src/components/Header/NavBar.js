@@ -4,6 +4,8 @@ import Styled from 'styled-components';
 import config from '../../config';
 
 
+const query = config.defaultReddit;
+
 const StyledNavBar = Styled.nav`
   position: relative;
   display: flex;
@@ -26,7 +28,8 @@ const StyledLink = Styled(Link)`
 export default function NavBar() {
   return (
     <StyledNavBar>
-      <StyledLink to={`/search/${config.defaultReddit}`}>Search</StyledLink>
+      {/* <StyledLink to={`/search/${config.defaultReddit}`}>Search</StyledLink> */}
+      <StyledLink to={`/search/${query}`}>Search</StyledLink>
       <StyledLink to="/how-it-works">How it works</StyledLink>
       <StyledLink to="/about">About</StyledLink>
     </StyledNavBar>

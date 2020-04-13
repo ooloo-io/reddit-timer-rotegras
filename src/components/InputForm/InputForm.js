@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Button from '../Button/Button';
 import {
   Input,
@@ -9,27 +9,21 @@ import {
 
 
 function InputForm() {
-  const location = useLocation();
-  const loc = useParams();
-  // console.log(loc);
+  const { slug } = useParams();
 
-  const [redditName, setReddit] = useState('');
+  const [redditName, setRedditName] = useState(slug);
 
-  const redditFromUrl = () => {
-    const reddit = location.pathname.split('/').slice(-1)[0];
-    setReddit(reddit);
-  };
-
-  const editInput = (e) => { const { value } = e.target; setReddit(value)};
+  const editInput = (e) => { const { value } = e.target; setRedditName(value); };
 
   useEffect(() => {
-    redditFromUrl();
-  }, [location]);
-
+    setRedditName(slug);
+  }, [slug]);
 
   return (
     <SearchGroup>
+
       <Prefix>r /</Prefix>
+
       <Input
         type="text"
         value={redditName}
@@ -40,6 +34,7 @@ function InputForm() {
         text="Search"
         path={`/search/${redditName}`}
       />
+
     </SearchGroup>
   );
 }
