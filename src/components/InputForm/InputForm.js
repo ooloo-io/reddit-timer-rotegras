@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Button from '../Button/Button';
+import Button from '../Button/Button.styles';
 import {
   Input,
   SearchGroup,
@@ -13,7 +13,7 @@ function InputForm() {
 
   const [redditName, setRedditName] = useState(slug);
 
-  const editInput = (e) => { const { value } = e.target; setRedditName(value); };
+  const editInput = (e) => setRedditName(e.target.value);
 
   useEffect(() => {
     setRedditName(slug);
@@ -30,11 +30,9 @@ function InputForm() {
         onChange={editInput}
       />
 
-      <Button
-        text="Search"
-        path={`/search/${redditName}`}
-      />
-
+      <Button to={`/search/${redditName}`}>
+        Search
+      </Button>
     </SearchGroup>
   );
 }

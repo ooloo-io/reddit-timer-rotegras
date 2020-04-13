@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
 
 
-const StyledButton = Styled(Link)`
+const Button = Styled(Link)`
   background: ${({ theme }) => theme.colors.buttonBg};
   color: #fff;
   border: none;
@@ -10,9 +10,10 @@ const StyledButton = Styled(Link)`
   font-size: ${({ theme }) => theme.textsize.small};
   font-weight: 500;
   height: 36px;
+  line-height: 2.75;
   text-transform: uppercase;
-  padding: 10px 15px 10px 17px;
+  padding: 0 16px;
 `;
 
 
-export default StyledButton;
+export default Button;
