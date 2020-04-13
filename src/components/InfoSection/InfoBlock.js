@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 
-const StyledInfo = Styled.section`
+const StyledBlock = Styled.section`
   width: 758px;
   margin: 55px auto 19px;
   padding: 0 0 0 10px;
@@ -22,18 +22,18 @@ const StyledTitle = Styled.h3`
 `;
 
 
-export default function Info({ title, children }) {
+export default function InfoBlock({ title, children }) {
   return (
-    <StyledInfo>
+    <StyledBlock>
       <StyledTitle>
         {title}
       </StyledTitle>
       {children}
-    </StyledInfo>
+    </StyledBlock>
   );
 }
 
-Info.propTypes = {
+InfoBlock.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

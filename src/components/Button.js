@@ -19,7 +19,6 @@ const StyledButton = Styled(Link)`
 export default function Button({ text, path }) {
   return (
     <StyledButton
-      type="submit"
       to={path}
     >
       { text }

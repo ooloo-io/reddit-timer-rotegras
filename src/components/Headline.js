@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Styled from 'styled-components';
 
 
@@ -10,14 +9,4 @@ const StyledHeadline = Styled.h1`
 `;
 
 
-export default function Headline({ children }) {
-  return (
-    <StyledHeadline>
-      {children}
-    </StyledHeadline>
-  );
-}
-
-Headline.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+export default StyledHeadline;

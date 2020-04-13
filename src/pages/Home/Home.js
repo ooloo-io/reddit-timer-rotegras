@@ -4,15 +4,10 @@ import HeatMap from '../../components/HeatMap/HeatMap';
 import Headline from '../../components/Headline';
 import Page from '../../components/Page';
 import RedditTopic from '../../components/RedditTopic';
-import Info from '../../components/Info';
+import InfoSection from '../../components/InfoSection/InfoSection';
 import config from '../../config';
 import {
   StyledSubline,
-  StyledA,
-  StyledA2,
-  StyledText,
-  StyledP,
-  StyledP2,
   ButtonWrapper,
 } from './Home.styles';
 
@@ -39,40 +34,8 @@ export default function Home() {
 
       <HeatMap />
 
-      <Info title="How it works">
-        <StyledText>
-          <StyledP>
-            • We find the 500 top posts from the past year for a subreddit.
-          </StyledP>
-          <StyledP>
-            • The data is visualized in a heatmap grouped by weekday and hour of the day.
-          </StyledP>
-          <StyledP>
-            • See immediately when to submit your reddit post.
-          </StyledP>
-        </StyledText>
-      </Info>
+      <InfoSection />
 
-      <Info title="About">
-        <StyledText>
-          <StyledP2>
-            This app was created during a course on&nbsp;
-            <StyledA href="https://www.ooloo.io">
-              ooloo.io
-            </StyledA>
-            &nbsp; with the goal to implement a pixel-perfect
-          </StyledP2>
-          <StyledP2>
-            real-world application with professional workflows and tools like Kanban, Asana, Zeplin,
-          </StyledP2>
-          <StyledP2>
-            GitHub, pull requests and code reviews.
-            <StyledA2 href="https://www.ooloo.io">
-              Click here for more information.
-            </StyledA2>
-          </StyledP2>
-        </StyledText>
-      </Info>
     </Page>
   );
 }

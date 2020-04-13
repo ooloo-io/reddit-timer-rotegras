@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import Styled from 'styled-components';
 import Button from './Button';
 
@@ -39,7 +39,7 @@ const Input = Styled.input`
   border: solid 1px ${({ theme }) => theme.colors.greyLight};
 `;
 
-const ButtonWrapper = Styled.div`
+const ButtonWrapper = Styled(Button)`
   width: 92px;
   letter-spacing: .3px;
 `;
@@ -55,10 +55,7 @@ function InputForm() {
     setReddit(reddit);
   };
 
-  const editInput = (e) => {
-    const { value } = e.target;
-    setReddit(value);
-  };
+  const editInput = (e) => { const { value } = e.target; setReddit(value)};
 
   useEffect(() => {
     redditFromUrl();
@@ -69,17 +66,14 @@ function InputForm() {
     <SearchGroup>
       <Input
         type="text"
-        // placeholder={redditName}
         value={redditName}
-        onChange={(e) => editInput(e)}
+        onChange={editInput}
       />
 
-      <ButtonWrapper>
-        <Button
+        <ButtonWrapper
           text="Search"
           path={`/search/${redditName}`}
         />
-      </ButtonWrapper>
     </SearchGroup>
   );
 }
