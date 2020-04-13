@@ -10,6 +10,8 @@ import {
 
 function InputForm() {
   const location = useLocation();
+  const loc = useParams();
+  // console.log(loc);
 
   const [redditName, setReddit] = useState('');
 
