@@ -1,31 +1,21 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import Styled from 'styled-components';
-import About from './pages/About';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
-import Search from './pages/Search';
-import HowItWorks from './pages/HowItWorks';
+import About from './pages/About/About';
+import Search from './pages/Search/Search';
+import HowItWorks from './pages/HowItWorks/HowItWorks';
 import Theme from './theme/Theme';
 import GlobalStyle from './theme/GlobalStyle';
+import AppWrapper from './App.styles';
 
-const StyledWrapper = Styled.div`
-    position: relative;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-`;
 
 function App() {
   return (
     <Theme>
       <GlobalStyle />
-      <StyledWrapper>
+      <AppWrapper>
         <Router>
           <Header />
           <Switch>
@@ -44,7 +34,7 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-      </StyledWrapper>
+      </AppWrapper>
     </Theme>
   );
 }

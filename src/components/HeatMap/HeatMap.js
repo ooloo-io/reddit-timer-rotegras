@@ -1,15 +1,15 @@
 import React from 'react';
-import Styled from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import table from './table.png';
 import config from '../../config';
 
 
-const StyledTable = Styled.div`
+const StyledTable = styled.div`
   margin-bottom: 45px;
 `;
 
-const StyledImg = Styled.img`
+const StyledImg = styled.img`
   margin-left: 1px;
   margin-top: -1.5px;
 `;

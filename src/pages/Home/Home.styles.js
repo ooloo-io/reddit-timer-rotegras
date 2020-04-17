@@ -1,10 +1,10 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const StyledSubline = Styled.p`
+const SublineWrapper = styled.p`
   text-align: center;
   margin: 10.5px auto 45px;
 `;
 
 
-export default StyledSubline;
+export default SublineWrapper;

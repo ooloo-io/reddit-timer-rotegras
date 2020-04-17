@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Button from '../Button/Button.styles';
-import {
-  Input,
-  SearchGroup,
-  Prefix,
-} from './InputForm.styles';
+import Button from '../Button/Button';
+import { Input, SearchGroup, Prefix } from './InputForm.styles';
 
 
 function InputForm() {
@@ -36,5 +32,6 @@ function InputForm() {
     </SearchGroup>
   );
 }
+
 
 export default InputForm;

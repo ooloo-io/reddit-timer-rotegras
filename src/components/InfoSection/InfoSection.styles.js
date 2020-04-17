@@ -1,19 +1,16 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const StyledParagraph = Styled.p`
+const ParagraphWrapper = styled.p`
   margin: 0;
   line-height: 1.75;
   letter-spacing: 0.03px;
 `;
 
-const StyledText = Styled.div`
+const TextWrapper = styled.div`
   line-height: 1.69;
   margin: 0;
 `;
 
 
-export {
-  StyledText,
-  StyledParagraph,
-};
+export { TextWrapper, ParagraphWrapper };

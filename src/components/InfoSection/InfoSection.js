@@ -1,31 +1,28 @@
 import React from 'react';
 import InfoBlock from './InfoBlock';
-import {
-  StyledText,
-  StyledParagraph,
-} from './InfoSection.styles';
+import { TextWrapper, ParagraphWrapper } from './InfoSection.styles';
 
 
 export default function InfoSection() {
   return (
     <>
       <InfoBlock title="How it works">
-        <StyledText>
-          <StyledParagraph>
+        <TextWrapper>
+          <ParagraphWrapper>
             • We find the 500 top posts from the past year for a subreddit.
-          </StyledParagraph>
-          <StyledParagraph>
+          </ParagraphWrapper>
+          <ParagraphWrapper>
             • The data is visualized in a heatmap grouped by weekday and hour of the day.
-          </StyledParagraph>
-          <StyledParagraph>
+          </ParagraphWrapper>
+          <ParagraphWrapper>
             • See immediately when to submit your reddit post.
-          </StyledParagraph>
-        </StyledText>
+          </ParagraphWrapper>
+        </TextWrapper>
       </InfoBlock>
 
       <InfoBlock title="About">
-        <StyledText>
-          <StyledParagraph>
+        <TextWrapper>
+          <ParagraphWrapper>
             This app was created during a course on
             {' '}
             <a href="https://www.ooloo.io">
@@ -33,17 +30,17 @@ export default function InfoSection() {
             </a>
             {' '}
             with the goal to implement a pixel-perfect
-          </StyledParagraph>
-          <StyledParagraph>
+          </ParagraphWrapper>
+          <ParagraphWrapper>
             real-world application with professional workflows and tools like Kanban, Asana, Zeplin,
-          </StyledParagraph>
-          <StyledParagraph>
+          </ParagraphWrapper>
+          <ParagraphWrapper>
             GitHub, pull requests and code reviews.&nbsp;
             <a href="https://www.ooloo.io">
               Click here for more information.
             </a>
-          </StyledParagraph>
-        </StyledText>
+          </ParagraphWrapper>
+        </TextWrapper>
       </InfoBlock>
     </>
   );

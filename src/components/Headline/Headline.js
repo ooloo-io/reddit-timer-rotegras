@@ -1,7 +1,7 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const StyledHeadline = Styled.h1`
+const StyledHeadline = styled.h1`
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
   margin: 30px auto 10px;
