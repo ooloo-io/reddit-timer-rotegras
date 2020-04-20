@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const HeaderWrapper = styled.header`
+const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,4 +15,4 @@ const HeaderWrapper = styled.header`
 `;
 
 
-export default HeaderWrapper;
+export { Wrapper };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-const NavBarWrapper = styled.nav`
+const Wrapper = styled.nav`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -21,4 +21,4 @@ const LinkWrapper = styled(Link)`
 `;
 
 
-export { NavBarWrapper, LinkWrapper };
+export { Wrapper, LinkWrapper };

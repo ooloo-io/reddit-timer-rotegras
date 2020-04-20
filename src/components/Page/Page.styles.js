@@ -6,4 +6,4 @@ const Page = styled.section`
 `;
 
 
-export default Page;
+export { Page };

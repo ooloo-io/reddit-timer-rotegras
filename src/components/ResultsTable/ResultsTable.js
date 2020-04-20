@@ -1,11 +1,11 @@
 import React from 'react';
-import ResultsTableWrapper from './ResultsTable.styles';
+import { Wrapper } from './ResultsTable.styles';
 
 
 export default function ResultsTable() {
   return (
-    <ResultsTableWrapper>
+    <Wrapper>
       Results Table Component
-    </ResultsTableWrapper>
+    </Wrapper>
   );
 }

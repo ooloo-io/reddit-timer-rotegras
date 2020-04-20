@@ -1,11 +1,11 @@
 import React from 'react';
-import RedditTopicWrapper from './RedditTopic.styles';
+import { Wrapper } from './RedditTopic.styles';
 
 
 export default function RedditTopic() {
   return (
-    <RedditTopicWrapper>
+    <Wrapper>
       r/javascript
-    </RedditTopicWrapper>
+    </Wrapper>
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const SearchGroup = styled.form`
+const Wrapper = styled.form`
   display: flex;
   align-items: center;
   height: 32px;
@@ -25,4 +25,4 @@ const Prefix = styled.span`
 `;
 
 
-export { Input, SearchGroup, Prefix };
+export { Input, Wrapper, Prefix };

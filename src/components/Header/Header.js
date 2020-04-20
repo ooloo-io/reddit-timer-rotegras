@@ -1,14 +1,14 @@
 import React from 'react';
-import HeaderNavBar from './HeaderNavBar/HeaderNavBar';
-import HeaderLogo from './HeaderLogo/HeaderLogo';
-import HeaderWrapper from './Header.styles';
+import HeaderNavBar from './HeaderNavBar';
+import HeaderLogo from './HeaderLogo';
+import { Wrapper } from './Header.styles';
 
 
 export default function Header() {
   return (
-    <HeaderWrapper>
+    <Wrapper>
       <HeaderLogo />
       <HeaderNavBar />
-    </HeaderWrapper>
+    </Wrapper>
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const ResultsTableWrapper = styled.div`
+const Wrapper = styled.div`
   display: block;
   width: 782px;
   height: 420px;
@@ -12,4 +12,4 @@ const ResultsTableWrapper = styled.div`
 `;
 
 
-export default ResultsTableWrapper;
+export { Wrapper };

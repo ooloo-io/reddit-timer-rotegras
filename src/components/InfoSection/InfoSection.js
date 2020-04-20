@@ -1,28 +1,28 @@
 import React from 'react';
 import InfoBlock from './InfoBlock';
-import { TextWrapper, ParagraphWrapper } from './InfoSection.styles';
+import { Text, Paragraph } from './InfoSection.styles';
 
 
 export default function InfoSection() {
   return (
     <>
       <InfoBlock title="How it works">
-        <TextWrapper>
-          <ParagraphWrapper>
+        <Text>
+          <Paragraph>
             • We find the 500 top posts from the past year for a subreddit.
-          </ParagraphWrapper>
-          <ParagraphWrapper>
+          </Paragraph>
+          <Paragraph>
             • The data is visualized in a heatmap grouped by weekday and hour of the day.
-          </ParagraphWrapper>
-          <ParagraphWrapper>
+          </Paragraph>
+          <Paragraph>
             • See immediately when to submit your reddit post.
-          </ParagraphWrapper>
-        </TextWrapper>
+          </Paragraph>
+        </Text>
       </InfoBlock>
 
       <InfoBlock title="About">
-        <TextWrapper>
-          <ParagraphWrapper>
+        <Text>
+          <Paragraph>
             This app was created during a course on
             {' '}
             <a href="https://www.ooloo.io">
@@ -30,17 +30,17 @@ export default function InfoSection() {
             </a>
             {' '}
             with the goal to implement a pixel-perfect
-          </ParagraphWrapper>
-          <ParagraphWrapper>
+          </Paragraph>
+          <Paragraph>
             real-world application with professional workflows and tools like Kanban, Asana, Zeplin,
-          </ParagraphWrapper>
-          <ParagraphWrapper>
+          </Paragraph>
+          <Paragraph>
             GitHub, pull requests and code reviews.&nbsp;
             <a href="https://www.ooloo.io">
               Click here for more information.
             </a>
-          </ParagraphWrapper>
-        </TextWrapper>
+          </Paragraph>
+        </Text>
       </InfoBlock>
     </>
   );

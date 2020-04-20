@@ -1,9 +1,9 @@
 import React from 'react';
-import Page from '../../components/Page/Page';
-import HeatMap from '../../components/HeatMap/HeatMap';
-import ResultsTable from '../../components/ResultsTable/ResultsTable';
-import InputForm from '../../components/InputForm/InputForm';
-import Headline from '../../components/Headline/Headline';
+import Page from '../../components/Page';
+import HeatMap from '../../components/HeatMap';
+import ResultsTable from '../../components/ResultsTable';
+import InputForm from '../../components/InputForm';
+import Headline from '../../components/Headline';
 
 
 export default function Search() {

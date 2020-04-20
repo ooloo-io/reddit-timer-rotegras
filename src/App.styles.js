@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const AppWrapper = styled.div`
+const Wrapper = styled.div`
     position: relative;
     width: 100%;
     max-width: 1440px;
@@ -9,4 +9,4 @@ const AppWrapper = styled.div`
 `;
 
 
-export default AppWrapper;
+export { Wrapper };

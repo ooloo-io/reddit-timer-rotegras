@@ -1,31 +1,27 @@
 import React from 'react';
 import { ReactComponent as FooterLogo } from './sign.svg';
-import {
-  FooterWrapper,
-  FooterLinkWrapper,
-  FooterLogoWrapper,
-} from './Footer.styles';
+import { Wrapper, LinkWrapper, LogoWrapper } from './Footer.styles';
 
 
 export default function Footer() {
   return (
-    <FooterWrapper>
-      <FooterLinkWrapper
+    <Wrapper>
+      <LinkWrapper
         as="a"
         href="https://www.ooloo.io"
         target="_blank"
         rel="noopener no-referrer"
       >
         ooloo.io
-      </FooterLinkWrapper>
+      </LinkWrapper>
 
-      <FooterLogoWrapper to="/">
+      <LogoWrapper to="/">
         <FooterLogo />
-      </FooterLogoWrapper>
+      </LogoWrapper>
 
-      <FooterLinkWrapper to="/terms-and-privacy">
+      <LinkWrapper to="/terms-and-privacy">
         Terms & Privacy
-      </FooterLinkWrapper>
-    </FooterWrapper>
+      </LinkWrapper>
+    </Wrapper>
   );
 }
