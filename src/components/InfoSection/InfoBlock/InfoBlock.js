@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyledTitle,
-  StyledBlock,
-} from './InfoBlock.styles';
+import { Block, BlockTitle } from './InfoBlock.styles';
 
 export default function InfoBlock({ title, children }) {
   return (
-    <StyledBlock>
-      <StyledTitle>
+    <Block>
+      <BlockTitle>
         {title}
-      </StyledTitle>
+      </BlockTitle>
       {children}
-    </StyledBlock>
+    </Block>
   );
 }
 

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const Button = Styled(Link)`
+const Button = styled(Link)`
   background: ${({ theme }) => theme.colors.buttonBg};
   color: #fff;
   border: none;
@@ -16,4 +16,4 @@ const Button = Styled(Link)`
 `;
 
 
-export default Button;
+export { Button };

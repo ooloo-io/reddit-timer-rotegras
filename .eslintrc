@@ -8,5 +8,13 @@
   "extends": ["airbnb"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "*.styles.js", "index.js" ],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    }
+  ]
 }

@@ -1,20 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Styled from 'styled-components';
 import { ReactComponent as NavLogo } from './logo.svg';
+import { Wrapper } from './HeaderLogo.styles';
 
-const StyledLogo = Styled.div`
-  margin-top: 5px;
-`;
 
-export default function Logo() {
+export default function HeaderLogo() {
   return (
     <div>
-      <StyledLogo>
+      <Wrapper>
         <Link to="/">
           <NavLogo />
         </Link>
-      </StyledLogo>
+      </Wrapper>
     </div>
   );
 }

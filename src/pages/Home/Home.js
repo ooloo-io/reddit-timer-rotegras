@@ -1,12 +1,12 @@
 import React from 'react';
-import HeatMap from '../../components/HeatMap/HeatMap';
-import Headline from '../../components/Headline/Headline';
+import config from '../../config';
+import Button from '../../components/Button';
+import HeatMap from '../../components/HeatMap';
+import Headline from '../../components/Headline';
+import InfoSection from '../../components/InfoSection';
 import Page from '../../components/Page';
 import RedditTopic from '../../components/RedditTopic';
-import InfoSection from '../../components/InfoSection/InfoSection';
-import config from '../../config';
-import StyledSubline from './Home.styles';
-import Button from '../../components/Button/Button.styles';
+import { Subline } from './Home.styles';
 
 
 export default function Home() {
@@ -16,9 +16,9 @@ export default function Home() {
         No reactions to your reddit posts?
       </Headline>
 
-      <StyledSubline>
+      <Subline>
         Great timing, great results! Find the best time to post on your subreddit.
-      </StyledSubline>
+      </Subline>
 
       <Button to={`/search/${config.defaultReddit}`}>
         Show me the best time
@@ -29,7 +29,6 @@ export default function Home() {
       <HeatMap />
 
       <InfoSection />
-
     </Page>
   );
 }

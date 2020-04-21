@@ -6,9 +6,9 @@ const theme = {
   colors: {
     black: '#000',
     white: '#fff',
-    greyLight: '#e6e6e6',
-    greyMedium: '#93918f',
-    greyDark: '#636363',
+    grayLight: '#e6e6e6',
+    grayMedium: '#93918f',
+    grayDark: '#636363',
     buttonBg: '#fdb755',
     link: '#0087ff',
   },
@@ -34,12 +34,15 @@ const theme = {
   },
 };
 
+
 const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 
+
 Theme.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 
 export default Theme;

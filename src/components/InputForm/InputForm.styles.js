@@ -1,7 +1,7 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const SearchGroup = Styled.form`
+const Wrapper = styled.form`
   display: flex;
   align-items: center;
   height: 32px;
@@ -9,24 +9,20 @@ const SearchGroup = Styled.form`
   margin-bottom: 10px;
 `;
 
-const Input = Styled.input`
+const Input = styled.input`
   height: 36px;
   width: 371px;
   font-size: ${({ theme }) => theme.textsize.small};
   padding: 0 16px 1px;
   margin: 1px 10px 0;
   border-radius: 2px;
-  border: solid 1px ${({ theme }) => theme.colors.greyLight};
+  border: solid 1px ${({ theme }) => theme.colors.grayLight};
 `;
 
-const Prefix = Styled.span`
+const Prefix = styled.span`
   padding-top: 1px;
   letter-spacing: .4px;
 `;
 
 
-export {
-  Input,
-  SearchGroup,
-  Prefix,
-};
+export { Input, Wrapper, Prefix };

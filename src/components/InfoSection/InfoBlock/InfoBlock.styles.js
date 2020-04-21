@@ -1,9 +1,9 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 
-const StyledBlock = Styled.section`
+const Block = styled.section`
   width: 758px;
-  margin: 55px auto 17px;
+  margin: 53px auto 17px;
   padding: 0 0 0 10px;
   text-align: left;
   border: 1px solid transparent;
@@ -13,7 +13,7 @@ const StyledBlock = Styled.section`
   }
 `;
 
-const StyledTitle = Styled.h3`
+const BlockTitle = styled.h3`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.textsize.medium};
   font-weight: 400;
@@ -21,7 +21,4 @@ const StyledTitle = Styled.h3`
 `;
 
 
-export {
-  StyledBlock,
-  StyledTitle,
-};
+export { Block, BlockTitle };

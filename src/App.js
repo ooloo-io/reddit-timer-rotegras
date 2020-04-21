@@ -1,31 +1,19 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import Styled from 'styled-components';
-import About from './pages/About';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home/Home';
-import Header from './components/Header/Header';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Header from './components/Header';
 import Search from './pages/Search';
-import HowItWorks from './pages/HowItWorks';
 import Theme from './theme/Theme';
 import GlobalStyle from './theme/GlobalStyle';
+import { Wrapper } from './App.styles';
 
-const StyledWrapper = Styled.div`
-    position: relative;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-`;
 
 function App() {
   return (
     <Theme>
       <GlobalStyle />
-      <StyledWrapper>
+      <Wrapper>
         <Router>
           <Header />
           <Switch>
@@ -35,16 +23,10 @@ function App() {
             <Route path="/search/:slug">
               <Search />
             </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/how-it-works">
-              <HowItWorks />
-            </Route>
           </Switch>
           <Footer />
         </Router>
-      </StyledWrapper>
+      </Wrapper>
     </Theme>
   );
 }

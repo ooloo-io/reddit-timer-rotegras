@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Button from '../Button/Button.styles';
-import {
-  Input,
-  SearchGroup,
-  Prefix,
-} from './InputForm.styles';
+import Button from '../Button';
+import { Input, Wrapper, Prefix } from './InputForm.styles';
 
 
 function InputForm() {
@@ -20,7 +16,7 @@ function InputForm() {
   }, [slug]);
 
   return (
-    <SearchGroup>
+    <Wrapper>
 
       <Prefix>r /</Prefix>
 
@@ -33,8 +29,9 @@ function InputForm() {
       <Button to={`/search/${redditName}`}>
         Search
       </Button>
-    </SearchGroup>
+    </Wrapper>
   );
 }
+
 
 export default InputForm;

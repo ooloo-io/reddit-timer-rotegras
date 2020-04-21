@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     width: 100%;
-    color: ${({ theme }) => theme.colors.greyMedium};
+    color: ${({ theme }) => theme.colors.grayMedium};
   }
 
   body {

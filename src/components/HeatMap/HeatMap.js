@@ -1,26 +1,16 @@
 import React from 'react';
-import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import table from './table.png';
 import config from '../../config';
+import { Wrapper, Image } from './HeatMap.styles';
 
 
-const StyledTable = Styled.div`
-  margin-bottom: 45px;
-`;
-
-const StyledImg = Styled.img`
-  margin-left: 1px;
-  margin-top: -1.5px;
-`;
-
-
-export default function Table() {
+export default function HeatMap() {
   return (
-    <StyledTable>
+    <Wrapper>
       <Link to={`/search/${config.defaultReddit}`}>
-        <StyledImg src={table} alt="reddit heatmap" />
+        <Image src={table} alt="reddit heatmap" />
       </Link>
-    </StyledTable>
+    </Wrapper>
   );
 }
