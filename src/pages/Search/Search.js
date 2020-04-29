@@ -22,9 +22,6 @@ function fetchData(slugValue, dataArray = [], afterValue = '') {
     .then((json) => {
       newAfter = json.data.after;
 
-      console.log('after: ', json.data.after);
-      console.log(json.data);
-
       // check to stop loop when equal or null
       if (newAfter !== afterValue && newAfter != null) {
         after = newAfter;
@@ -39,6 +36,7 @@ function fetchData(slugValue, dataArray = [], afterValue = '') {
         fetchData(slugValue, loopData, after);
       }
     })
+    // eslint-disable-next-line no-console
     .catch((error) => console.log(`${error.message}`));
 
   return loopData;
