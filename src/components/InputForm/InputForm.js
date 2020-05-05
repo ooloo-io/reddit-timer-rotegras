@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import propTypes from 'prop-types';
 import Button from '../Button';
 import { Input, Wrapper, Prefix } from './InputForm.styles';
 
 
-function InputForm() {
-  const { slug } = useParams();
-
-  const [redditName, setRedditName] = useState(slug);
+function InputForm({ search }) {
+  const [redditName, setRedditName] = useState(search);
 
   const editInput = (e) => setRedditName(e.target.value);
 
+  // needed to update value for menu item search
   useEffect(() => {
-    setRedditName(slug);
-  }, [slug]);
+    setRedditName(search);
+  }, [search]);
 
   return (
     <Wrapper>
-
       <Prefix>r /</Prefix>
 
       <Input
@@ -32,6 +30,11 @@ function InputForm() {
     </Wrapper>
   );
 }
+
+
+InputForm.propTypes = {
+  search: propTypes.string.isRequired,
+};
 
 
 export default InputForm;
