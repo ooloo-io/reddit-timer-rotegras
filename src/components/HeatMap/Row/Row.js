@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from '../Cell';
-import { Wrapper } from './Row.styles';
+import { Wrapper, RowName } from './Row.styles';
 
 
-const dayLabels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-export default function Row({ data, dayLabel }) {
+export default function Row({ data, dayLabel, row, getActiveCell, activeCell }) {
   return (
     <Wrapper>
-      <div>
-        { dayLabel }
-      </div>
+      <RowName>{dayLabel}</RowName>
       {
         data.map((item, i) => {
           return (
             <Cell
+              key={row}
               itemsNumber={item.length}
-              dayLabel={dayLabels[i]}
+              column={i}
+              row={row}
+              activeCell={activeCell}
+              getActiveCell={getActiveCell}
             />
           );
         })
@@ -30,4 +30,7 @@ export default function Row({ data, dayLabel }) {
 Row.propTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
   dayLabel: PropTypes.string.isRequired,
+  row: PropTypes.number.isRequired,
+  activeCell: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+  getActiveCell: PropTypes.func.isRequired,
 };

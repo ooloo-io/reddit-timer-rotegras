@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import table from './table.png';
-import config from '../../config';
 import Row from './Row';
-import { Wrapper, Image } from './HeatMap.styles';
+import Header from './Header';
+import { Wrapper, TimeLabel } from './HeatMap.styles';
+
+
+const dayLabels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export default function HeatMap({ data = [] }) {
   const [tableData, setTableData] = useState([]);
+  const [activeCell, setActiveCell] = useState([])
 
   const buildTable = () => {
     const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
@@ -25,19 +27,26 @@ export default function HeatMap({ data = [] }) {
     buildTable();
   }, [data]);
 
+  const toggleActiveCell = (activeRow, activeColumn) => {
+    setActiveCell([activeRow, activeColumn])
+  };
 
   return (
     <Wrapper>
+      <Header />
       {
-        tableData.map((row) => <Row data={row} />)
+        tableData.map((row, i) =>
+          <Row data={row} row={i}
+            dayLabel={dayLabels[i]}
+            getActiveCell={toggleActiveCell}
+            activeCell={activeCell}
+          />)
       }
-      <Link to={`/search/${config.defaultReddit}`}>
-        <Image src={table} alt="reddit heatmap" />
-      </Link>
     </Wrapper>
   );
 }
 
-// HeatMap.propTypes = {
-//   data: PropTypes.arrayOf(PropTypes.any).isRequired,
-// };
+
+HeatMap.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.any).isRequired,
+};
