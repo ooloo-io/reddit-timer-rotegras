@@ -1,12 +1,11 @@
 import React from 'react';
 import config from '../../config';
 import Button from '../../components/Button';
-import StaticHeatMap from '../../components/HeatMap/Static';
+import StaticHeatMap from '../../components/HeatMap/StaticHeatMap';
 import Headline from '../../components/Headline';
 import InfoSection from '../../components/InfoSection';
 import Page from '../../components/Page';
 import RedditTopic from '../../components/RedditTopic';
-import { Link } from 'react-router-dom';
 import { Subline } from './Home.styles';
 
 

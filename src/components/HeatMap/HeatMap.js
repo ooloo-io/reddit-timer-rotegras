@@ -2,46 +2,66 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Row from './Row';
 import Header from './Header';
-import { Wrapper, TimeLabel } from './HeatMap.styles';
+import Footer from './Footer';
+import { Wrapper } from './HeatMap.styles';
 
 
-const dayLabels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const dayLabels = [
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+];
 
-export default function HeatMap({ data = [] }) {
+export default function HeatMap({ data }) {
   const [tableData, setTableData] = useState([]);
-  const [activeCell, setActiveCell] = useState([])
+  const [activeCell, setActiveCell] = useState([]);
+  const [timezone, setTimezone] = useState('');
+  const [timezoneDifference, setTimezoneDifference] = useState(0);
 
-  const buildTable = () => {
-    const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
-
-    data.map((item) => {
-      const date = new Date(item.data.created * 1000);
-      const day = Number(date.getDay());
-      const time = Number(date.toLocaleTimeString().slice(0, 2));
-      orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
-    });
-    setTableData(orderPosts);
-  };
 
   useEffect(() => {
+    const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const clientTimezoneDifference = (new Date().getTimezoneOffset()) * 60;
+    setTimezone(clientTimezone);
+    setTimezoneDifference(clientTimezoneDifference);
+  }, []);
+
+  useEffect(() => {
+    const buildTable = () => {
+      const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
+
+      data.forEach((item) => {
+        const clientDate = (item.data.created_utc + timezoneDifference) * 1000;
+        const date = new Date(clientDate);
+        const day = Number(date.getDay());
+        const time = Number(date.toLocaleTimeString().slice(0, 2));
+        orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
+      });
+      setTableData(orderPosts);
+    };
+
     buildTable();
-  }, [data]);
+  }, [data, timezoneDifference]);
 
   const toggleActiveCell = (activeRow, activeColumn) => {
-    setActiveCell([activeRow, activeColumn])
+    setActiveCell([activeRow, activeColumn]);
   };
 
   return (
     <Wrapper>
       <Header />
       {
-        tableData.map((row, i) =>
-          <Row data={row} row={i}
+        tableData.map((row, i) => (
+          <Row
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
+            data={row}
+            row={i}
             dayLabel={dayLabels[i]}
             getActiveCell={toggleActiveCell}
             activeCell={activeCell}
-          />)
+          />
+        ))
       }
+      <Footer timezone={timezone} />
     </Wrapper>
   );
 }

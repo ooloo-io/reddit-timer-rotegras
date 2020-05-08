@@ -4,22 +4,18 @@ import { Wrapper } from './Cell.styles';
 
 
 export default function Cell({
-  itemsNumber,
-  row,
-  column,
-  activeCell,
-  getActiveCell,
+  itemsNumber, row, column, activeCell, getActiveCell,
 }) {
   const [isActive, setActive] = useState(false);
-  const thisCoordinates = [row, column];
+  const thisCell = [row, column];
 
   useEffect(() => {
-    if (activeCell[0] === row && activeCell[1] === column) {
+    if (activeCell === thisCell) {
       setActive(true);
       return;
     }
     setActive(false);
-  }, [activeCell]);
+  }, [activeCell, thisCell]);
 
   const handleClick = () => {
     getActiveCell(row, column);
@@ -27,7 +23,6 @@ export default function Cell({
 
   return (
     <Wrapper
-      key={column}
       isActive={isActive}
       onClick={handleClick}
       row={row}

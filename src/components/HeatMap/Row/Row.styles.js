@@ -14,13 +14,16 @@ const RowName = styled.div`
   justify-content: center;
   width: 154px;
   height: 40px;
-  background: black;
-  color: white;
-  font-weight: 500;
-  color: ${(props) => props.theme.colors.white};
   background-color: ${(props) => props.theme.colors.backgroundDark};
+`;
+
+const Text = styled.span`
+  color: ${(props) => props.theme.colors.white};
   font-size: ${(props) => props.theme.textsize.small};
+  letter-spacing: 1.1px;
+  margin-left: 5px;
+  font-weight: 500;
 `;
 
 
-export { Wrapper, RowName };
+export { Wrapper, RowName, Text };

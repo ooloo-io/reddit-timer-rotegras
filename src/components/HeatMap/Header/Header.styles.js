@@ -15,8 +15,6 @@ const TimeLabel = styled.div`
   align-text: center;
   width: 80px;
   height: 100%;
-  color: ${(props) => props.theme.colors.grayDarker};
-  font-size: ${(props) => props.theme.textsize.small};
   background-image: linear-gradient(
     to top,
     ${({ theme }) => theme.colors.backgroundBottom} 0%,
@@ -24,5 +22,12 @@ const TimeLabel = styled.div`
   );
 `;
 
+const Text = styled.span`
+  margin-top: 2px;
+  margin-left: 1px;
+  color: ${(props) => props.theme.colors.grayDarker};
+  letter-spacing: .5px;
+  font-size: ${(props) => props.theme.textsize.smaller};
+`;
 
-export { Wrapper, TimeLabel };
+export { Wrapper, TimeLabel, Text };

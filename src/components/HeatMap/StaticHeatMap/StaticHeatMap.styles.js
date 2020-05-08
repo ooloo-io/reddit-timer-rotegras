@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin-bottom: 45px;
-  margin-top: 60px;
 `;
 
 const Image = styled.img`

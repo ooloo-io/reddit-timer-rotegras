@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from '../Cell';
-import { Wrapper, RowName } from './Row.styles';
+import { Wrapper, RowName, Text } from './Row.styles';
 
 
-export default function Row({ data, dayLabel, row, getActiveCell, activeCell }) {
+export default function Row({
+  data, dayLabel, row, getActiveCell, activeCell,
+}) {
   return (
     <Wrapper>
-      <RowName>{dayLabel}</RowName>
+      <RowName>
+        <Text>
+          {dayLabel}
+        </Text>
+      </RowName>
       {
         data.map((item, i) => {
           return (
             <Cell
-              key={row}
+              key={`${row}-${i}`}
               itemsNumber={item.length}
               column={i}
               row={row}

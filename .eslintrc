@@ -7,7 +7,8 @@
   "parser": "babel-eslint",
   "extends": ["airbnb"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "arrow-body-style": ["error", "as-needed"]
   },
   "overrides": [
     {
