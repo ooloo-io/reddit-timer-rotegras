@@ -15,18 +15,16 @@ export default function Row({
         </Text>
       </RowName>
       {
-        data.map((item, i) => {
-          return (
-            <Cell
-              key={`${row}-${i}`}
-              itemsNumber={item.length}
-              column={i}
-              row={row}
-              activeCell={activeCell}
-              getActiveCell={getActiveCell}
-            />
-          );
-        })
+        data.map((item, i) => (
+          <Cell
+            key={`${row}${i * 2}`}
+            itemsNumber={item.length}
+            column={i}
+            row={row}
+            activeCell={activeCell}
+            getActiveCell={getActiveCell}
+          />
+        ))
       }
     </Wrapper>
   );

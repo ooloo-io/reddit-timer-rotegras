@@ -14,4 +14,3 @@ const Bold = styled.span`
 
 
 export { Text, Bold };
-

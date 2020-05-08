@@ -51,8 +51,7 @@ export default function HeatMap({ data }) {
       {
         tableData.map((row, i) => (
           <Row
-            // eslint-disable-next-line react/no-array-index-key
-            key={i}
+            key={dayLabels[i]}
             data={row}
             row={i}
             dayLabel={dayLabels[i]}

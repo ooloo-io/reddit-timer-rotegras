@@ -19,4 +19,3 @@ export default function Footer({ timezone }) {
 Footer.propTypes = {
   timezone: PropTypes.string.isRequired,
 };
-
