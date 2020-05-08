@@ -7,15 +7,14 @@ export default function Cell({
   itemsNumber, row, column, activeCell, getActiveCell,
 }) {
   const [isActive, setActive] = useState(false);
-  const thisCell = [row, column];
 
   useEffect(() => {
-    if (activeCell === thisCell) {
+    if (activeCell[0] === row && activeCell[1] === column) {
       setActive(true);
       return;
     }
     setActive(false);
-  }, [activeCell, thisCell]);
+  }, [activeCell, row, column]);
 
   const handleClick = () => {
     getActiveCell(row, column);
