@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
+
 const theme = {
   colors: {
     black: '#000',
@@ -17,19 +18,6 @@ const theme = {
     borderDark: '#1e2537',
     backgroundBottom: '#e9e9e9',
     backgroundTop: '#fefefe',
-  },
-  heatMapColors: {
-    color0: '#e0e592',
-    color1: '#aed396',
-    color2: '#a9d194',
-    color3: '#a0ce93',
-    color4: '#99cd94',
-    color5: '#8cc894',
-    color6: '#5eb391',
-    color7: '#5db492',
-    color8: '#5cb391',
-    color9: '#5aad8c',
-    color10: '#3984a3',
   },
   fonts: {
     primary: 'Montserrat',
@@ -50,6 +38,26 @@ const theme = {
     minHeight: '100vh',
     padding: '100px 0',
     textAlign: 'center',
+  },
+  heatmap: {
+    width: '1115px',
+    headerHeight: '54px',
+    dayLabelWidth: '154px',
+    cellWidth: '40px',
+    cellHeight: '40px',
+    colors: {
+      0: '#e0e592',
+      1: '#aed396',
+      2: '#a9d194',
+      3: '#a0ce93',
+      4: '#99cd94',
+      5: '#8cc894',
+      6: '#5eb391',
+      7: '#5db492',
+      8: '#5cb391',
+      9: '#5aad8c',
+      10: '#3984a3',
+    },
   },
 };
 

@@ -5,7 +5,7 @@ import { Wrapper, RowName, Text } from './Row.styles';
 
 
 export default function Row({
-  data, dayLabel, row, getActiveCell, activeCell,
+  data, dayLabel, weekDay, onCellClick, activeCell,
 }) {
   return (
     <Wrapper>
@@ -15,14 +15,15 @@ export default function Row({
         </Text>
       </RowName>
       {
-        data.map((item, i) => (
+        data.map((item, hour) => (
           <Cell
-            key={`${row}${i * 2}`}
+            // eslint-disable-next-line react/no-array-index-key
+            key={`${weekDay}${hour}`}
             itemsNumber={item.length}
-            column={i}
-            row={row}
+            hour={hour}
+            weekDay={weekDay}
             activeCell={activeCell}
-            getActiveCell={getActiveCell}
+            onCellClick={onCellClick}
           />
         ))
       }
@@ -32,9 +33,9 @@ export default function Row({
 
 
 Row.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.any).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   dayLabel: PropTypes.string.isRequired,
-  row: PropTypes.number.isRequired,
+  weekDay: PropTypes.number.isRequired,
   activeCell: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-  getActiveCell: PropTypes.func.isRequired,
+  onCellClick: PropTypes.func.isRequired,
 };

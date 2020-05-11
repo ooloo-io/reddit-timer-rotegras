@@ -12,8 +12,8 @@ const RowName = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 154px;
-  height: 40px;
+  width: ${({ theme }) => theme.heatmap.dayLabelWidth};
+  height: ${({ theme }) => theme.heatmap.cellHeight};
   background-color: ${(props) => props.theme.colors.backgroundDark};
 `;
 
@@ -22,7 +22,7 @@ const Text = styled.span`
   font-size: ${(props) => props.theme.textsize.small};
   letter-spacing: 1.1px;
   margin-left: 5px;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 

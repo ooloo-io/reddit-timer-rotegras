@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Text, Bold } from './Footer.styles';
 
 
-export default function Footer({ timezone }) {
+export default function Footer() {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   return (
     <Text>
       All times are shown in your timezone:
@@ -14,8 +15,3 @@ export default function Footer({ timezone }) {
     </Text>
   );
 }
-
-
-Footer.propTypes = {
-  timezone: PropTypes.string.isRequired,
-};

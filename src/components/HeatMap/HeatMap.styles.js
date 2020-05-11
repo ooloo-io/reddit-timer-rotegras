@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1115px;
+  width: ${({ theme }) => theme.heatmap.width};
   margin-bottom: 45px;
   margin-top: 50px;
 `;

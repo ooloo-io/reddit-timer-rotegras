@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Row from './Row';
 import Header from './Header';
@@ -11,56 +11,45 @@ const dayLabels = [
 ];
 
 export default function HeatMap({ data }) {
-  const [tableData, setTableData] = useState([]);
-  const [activeCell, setActiveCell] = useState([]);
-  const [timezone, setTimezone] = useState('');
-  const [timezoneDifference, setTimezoneDifference] = useState(0);
+  const [activeCell, onCellClick] = useState([]);
+
+  const timezoneDifference = () => new Date().getTimezoneOffset() * 60;
 
 
-  useEffect(() => {
-    const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const clientTimezoneDifference = (new Date().getTimezoneOffset()) * 60;
-    setTimezone(clientTimezone);
-    setTimezoneDifference(clientTimezoneDifference);
-  }, []);
+  const tableData = useMemo(() => {
+    const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
 
-  useEffect(() => {
-    const buildTable = () => {
-      const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
+    data.forEach((item) => {
+      const clientDate = (item.data.created_utc + timezoneDifference()) * 1000;
+      const date = new Date(clientDate);
+      const day = Number(date.getDay());
+      const time = Number(date.toLocaleTimeString('de-De').slice(0, 2));
+      orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
+    });
 
-      data.forEach((item) => {
-        const clientDate = (item.data.created_utc + timezoneDifference) * 1000;
-        const date = new Date(clientDate);
-        const day = Number(date.getDay());
-        const time = Number(date.toLocaleTimeString('de-De').slice(0, 2));
-        orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
-      });
-      setTableData(orderPosts);
-    };
-
-    buildTable();
-  }, [data, timezoneDifference]);
+    return orderPosts;
+  }, [data]);
 
   const toggleActiveCell = (activeRow, activeColumn) => {
-    setActiveCell([activeRow, activeColumn]);
+    onCellClick([activeRow, activeColumn]);
   };
 
   return (
     <Wrapper>
       <Header />
       {
-        tableData.map((row, i) => (
+        tableData.map((weekDayData, weekDay) => (
           <Row
-            key={dayLabels[i]}
-            data={row}
-            row={i}
-            dayLabel={dayLabels[i]}
-            getActiveCell={toggleActiveCell}
+            key={dayLabels[weekDay]}
+            data={weekDayData}
+            weekDay={weekDay}
+            dayLabel={dayLabels[weekDay]}
+            onCellClick={toggleActiveCell}
             activeCell={activeCell}
           />
         ))
       }
-      <Footer timezone={timezone} />
+      <Footer />
     </Wrapper>
   );
 }

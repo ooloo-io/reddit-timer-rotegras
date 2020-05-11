@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  padding-left: 154px;
-  height: 54px;
+  padding-left: ${({ theme }) => theme.heatmap.dayLabelWidth};
+  height: ${({ theme }) => theme.heatmap.headerHeight};
   width: 100%;
 `;
 
@@ -13,7 +13,7 @@ const TimeLabel = styled.div`
   align-items: center;
   justify-content: center;
   align-text: center;
-  width: 80px;
+  width: ${({ theme }) => theme.heatmap.width};
   height: 100%;
   background-image: linear-gradient(
     to top,
@@ -28,6 +28,7 @@ const Text = styled.span`
   color: ${(props) => props.theme.colors.grayDarker};
   letter-spacing: .5px;
   font-size: ${(props) => props.theme.textsize.smaller};
+  font-weight: 500;
 `;
 
 export { Wrapper, TimeLabel, Text };

@@ -6,12 +6,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  height: ${({ theme }) => theme.heatmap.cellHeight};
+  width: ${({ theme }) => theme.heatmap.cellWidth};
   background-color: ${(props) => (
     props.children < 10
-      ? props.theme.heatMapColors[`color${props.children}`]
-      : props.theme.heatMapColors.color10
+      ? props.theme.heatmap.colors[props.children]
+      : props.theme.heatmap.colors['10']
   )};
   color: ${(props) => props.theme.colors.white};
   font-size: ${(props) => props.theme.textsize.smaller};
