@@ -32,7 +32,7 @@ export default function HeatMap({ data }) {
         const clientDate = (item.data.created_utc + timezoneDifference) * 1000;
         const date = new Date(clientDate);
         const day = Number(date.getDay());
-        const time = Number(date.toLocaleTimeString().slice(0, 2));
+        const time = Number(date.toLocaleTimeString('de-De').slice(0, 2));
         orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
       });
       setTableData(orderPosts);
