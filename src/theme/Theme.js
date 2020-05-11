@@ -42,6 +42,7 @@ const theme = {
   heatmap: {
     width: '1115px',
     headerHeight: '54px',
+    headerLabelWidth: '80px',
     dayLabelWidth: '154px',
     cellWidth: '40px',
     cellHeight: '40px',

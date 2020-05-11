@@ -13,7 +13,7 @@ const TimeLabel = styled.div`
   align-items: center;
   justify-content: center;
   align-text: center;
-  width: ${({ theme }) => theme.heatmap.width};
+  width: ${({ theme }) => theme.heatmap.headerLabelWidth};
   height: 100%;
   background-image: linear-gradient(
     to top,
