@@ -4,6 +4,7 @@ import Page from '../../components/Page';
 import InputForm from '../../components/InputForm';
 import Headline from '../../components/Headline';
 import Spinner from '../../components/Spinner';
+import HeatMap from '../../components/HeatMap';
 
 
 const NUM_POSTS_TO_FETCH = 500;
@@ -46,9 +47,9 @@ async function fetchPosts(subredditName, after = null, page = 1) {
 function Search() {
   const { slug } = useParams();
 
-  // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setLoading(true);
@@ -69,6 +70,9 @@ function Search() {
 
       {
         loading && <Spinner />
+      }
+      {
+        !loading && <HeatMap data={data} />
       }
     </Page>
   );

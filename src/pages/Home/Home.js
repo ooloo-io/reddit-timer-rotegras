@@ -1,7 +1,7 @@
 import React from 'react';
 import config from '../../config';
 import Button from '../../components/Button';
-import HeatMap from '../../components/HeatMap';
+import StaticHeatMap from '../../components/HeatMap/StaticHeatMap';
 import Headline from '../../components/Headline';
 import InfoSection from '../../components/InfoSection';
 import Page from '../../components/Page';
@@ -26,7 +26,7 @@ export default function Home() {
 
       <RedditTopic />
 
-      <HeatMap />
+      <StaticHeatMap />
 
       <InfoSection />
     </Page>

@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: ${({ theme }) => theme.heatmap.width};
   margin-bottom: 45px;
-`;
-
-const Image = styled.img`
-  margin-left: 1px;
-  margin-top: -1.5px;
+  margin-top: 50px;
 `;
 
 
-export { Wrapper, Image };
+export { Wrapper };
