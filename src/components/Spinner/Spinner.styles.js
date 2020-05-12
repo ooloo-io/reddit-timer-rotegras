@@ -8,6 +8,8 @@ const Spin = keyframes`
 
 const Wrapper = styled.div`
   margin-top: 48px;
+  width: 71px;
+  height: 71px;
   animation: ${Spin} 1.5s linear infinite;
 `;
 

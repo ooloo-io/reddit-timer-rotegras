@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   background-color: ${(props) => (
     props.children < 10
       ? props.theme.heatmap.colors[props.children]
-      : props.theme.heatmap.colors['10']
+      : props.theme.heatmap.colors[10]
   )};
   color: ${(props) => props.theme.colors.white};
   font-size: ${(props) => props.theme.textsize.smaller};
