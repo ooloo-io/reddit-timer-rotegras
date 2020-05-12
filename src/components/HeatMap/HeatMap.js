@@ -1,20 +1,18 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Row from './Row';
 import Header from './Header';
 import Footer from './Footer';
 import { Wrapper } from './HeatMap.styles';
+import { connect } from 'react-redux';
 
 
 const dayLabels = [
   'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
 ];
 
-export default function HeatMap({ data }) {
-  const [activeCell, onCellClick] = useState([]);
-
+function HeatMap({ data }) {
   const timezoneDifference = () => new Date().getTimezoneOffset() * 60;
-
 
   const tableData = useMemo(() => {
     const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
@@ -30,9 +28,6 @@ export default function HeatMap({ data }) {
     return orderPosts;
   }, [data]);
 
-  const toggleActiveCell = (activeRow, activeColumn) => {
-    onCellClick([activeRow, activeColumn]);
-  };
 
   return (
     <Wrapper>
@@ -41,11 +36,9 @@ export default function HeatMap({ data }) {
         tableData.map((weekDayData, weekDay) => (
           <Row
             key={dayLabels[weekDay]}
-            data={weekDayData}
+            weekDayData={weekDayData}
             weekDay={weekDay}
             dayLabel={dayLabels[weekDay]}
-            onCellClick={toggleActiveCell}
-            activeCell={activeCell}
           />
         ))
       }
@@ -54,7 +47,15 @@ export default function HeatMap({ data }) {
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  }
+};
 
 HeatMap.propTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
+
+
+export default connect(mapStateToProps)(HeatMap);
