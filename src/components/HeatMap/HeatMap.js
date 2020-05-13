@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Row from './Row';
 import Header from './Header';
 import Footer from './Footer';
@@ -10,11 +11,8 @@ const dayLabels = [
   'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
 ];
 
-export default function HeatMap({ data }) {
-  const [activeCell, onCellClick] = useState([]);
-
+function HeatMap({ data }) {
   const timezoneDifference = () => new Date().getTimezoneOffset() * 60;
-
 
   const tableData = useMemo(() => {
     const orderPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
@@ -23,16 +21,14 @@ export default function HeatMap({ data }) {
       const clientDate = (item.data.created_utc + timezoneDifference()) * 1000;
       const date = new Date(clientDate);
       const day = Number(date.getDay());
-      const time = Number(date.toLocaleTimeString('de-De').slice(0, 2));
-      orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
+      const time = Number((`0${date.getHours()}`).slice(-2));
+      // eslint-disable-next-line
+      const row = orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
     });
 
     return orderPosts;
   }, [data]);
 
-  const toggleActiveCell = (activeRow, activeColumn) => {
-    onCellClick([activeRow, activeColumn]);
-  };
 
   return (
     <Wrapper>
@@ -41,11 +37,9 @@ export default function HeatMap({ data }) {
         tableData.map((weekDayData, weekDay) => (
           <Row
             key={dayLabels[weekDay]}
-            data={weekDayData}
+            weekDayData={weekDayData}
             weekDay={weekDay}
             dayLabel={dayLabels[weekDay]}
-            onCellClick={toggleActiveCell}
-            activeCell={activeCell}
           />
         ))
       }
@@ -54,7 +48,11 @@ export default function HeatMap({ data }) {
   );
 }
 
+const mapStateToProps = (state) => ({ data: state.data });
 
 HeatMap.propTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
+
+
+export default connect(mapStateToProps)(HeatMap);

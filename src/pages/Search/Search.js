@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Page from '../../components/Page';
 import InputForm from '../../components/InputForm';
 import Headline from '../../components/Headline';
 import Spinner from '../../components/Spinner';
 import HeatMap from '../../components/HeatMap';
+
+import { setData, setActiveCell } from '../../redux/actions/actions';
 
 
 const NUM_POSTS_TO_FETCH = 500;
@@ -44,21 +48,22 @@ async function fetchPosts(subredditName, after = null, page = 1) {
 }
 
 
-function Search() {
+// eslint-disable-next-line no-shadow
+function Search({ setData, setActiveCell }) {
   const { slug } = useParams();
 
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
     setLoading(true);
+    setActiveCell([null, null]);
     fetchPosts(slug)
       .then((posts) => setData(posts))
       .then(() => setLoading(false))
       // eslint-disable-next-line no-console
       .catch((error) => console.log(error.message));
-  }, [slug]);
+  }, [slug, setData, setActiveCell]);
 
   return (
     <Page>
@@ -72,10 +77,17 @@ function Search() {
         loading && <Spinner />
       }
       {
-        !loading && <HeatMap data={data} />
+        !loading && <HeatMap />
       }
     </Page>
   );
 }
 
-export default Search;
+const mapDispatchToProps = { setData, setActiveCell };
+
+Search.propTypes = {
+  setData: PropTypes.func.isRequired,
+  setActiveCell: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(Search);
