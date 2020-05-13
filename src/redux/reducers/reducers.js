@@ -1,22 +1,24 @@
 import {
-  SET_DATA, SET_ACTIVECELL,
-} from "../constants/actionTypes";
+  SET_DATA, SET_ACTIVECELL, SET_HOURPOSTS,
+} from '../constants/actionTypes';
 
 
 const initialState = {
   data: [],
   activeCell: [null, null],
+  hourPosts: [],
 };
-
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-
     case SET_DATA:
-      return Object.assign({}, state, { data: action.payload });
+      return { ...state, data: action.payload };
 
     case SET_ACTIVECELL:
-      return Object.assign({}, state, { activeCell: action.payload });
+      return { ...state, activeCell: action.payload };
+
+    case SET_HOURPOSTS:
+      return { ...state, hourPosts: action.payload };
 
     default: return state;
   }

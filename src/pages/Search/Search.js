@@ -47,8 +47,8 @@ async function fetchPosts(subredditName, after = null, page = 1) {
   return posts.concat(nextPosts);
 }
 
-
-function Search({ data, setData, setActiveCell }) {
+// eslint-disable-next-line no-shadow
+function Search({ setData, setActiveCell }) {
   const { slug } = useParams();
   const [loading, setLoading] = useState(true);
 
@@ -84,6 +84,7 @@ const mapDispatchToProps = { setData, setActiveCell };
 
 Search.propTypes = {
   setData: PropTypes.func.isRequired,
-}
+  setActiveCell: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(Search);

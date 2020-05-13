@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Row from './Row';
 import Header from './Header';
 import Footer from './Footer';
 import { Wrapper } from './HeatMap.styles';
-import { connect } from 'react-redux';
 
 
 const dayLabels = [
@@ -21,8 +21,10 @@ function HeatMap({ data }) {
       const clientDate = (item.data.created_utc + timezoneDifference()) * 1000;
       const date = new Date(clientDate);
       const day = Number(date.getDay());
-      const time = Number(date.toLocaleTimeString('de-De').slice(0, 2));
-      orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
+      const time = Number((`0${date.getHours()}`).slice(-2));
+      // eslint-disable-next-line
+      const row = orderPosts[day][time] = [...orderPosts[day][time].concat(item.data)];
+      row.sort((a, b) => (a.created_utc) - (b.created_utc));
     });
 
     return orderPosts;
@@ -47,11 +49,7 @@ function HeatMap({ data }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.data,
-  }
-};
+const mapStateToProps = (state) => ({ data: state.data });
 
 HeatMap.propTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
