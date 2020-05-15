@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setActiveCell, setHourPosts } from '../../../redux/actions/actions';
+import { setActiveCell } from '../../../redux/actions/actions';
 import { Wrapper } from './Cell.styles';
 
 
@@ -37,7 +37,7 @@ Cell.propTypes = {
 
 const mapStateToProps = (state) => ({ activeCell: state.activeCell });
 
-const mapDispatchToProps = { setActiveCell, setHourPosts };
+const mapDispatchToProps = { setActiveCell };
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cell);
