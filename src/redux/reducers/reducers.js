@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   data: [],
-  activeCell: [null, null],
+  activeCell: { day: null, hour: null },
   hourPosts: [],
 };
 

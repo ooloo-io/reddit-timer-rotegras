@@ -56,10 +56,26 @@ function Search({ setData, setActiveCell }) {
 
 
   useEffect(() => {
+    function sortData(items) {
+      const sortPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
+      const timezoneDifference = () => new Date().getTimezoneOffset() * 60;
+
+      items.forEach((item) => {
+        const clientDate = (item.data.created_utc + timezoneDifference()) * 1000;
+        const date = new Date(clientDate);
+        const day = date.getDay();
+        const time = Number((`0${date.getHours()}`).slice(-2));
+        // eslint-disable-next-line
+        sortPosts[day][time] = sortPosts[day][time].concat(item.data);
+      });
+
+      setData(sortPosts);
+    }
+
     setLoading(true);
-    setActiveCell([null, null]);
+    setActiveCell({ day: null, hour: null });
     fetchPosts(slug)
-      .then((posts) => setData(posts))
+      .then((posts) => sortData(posts))
       .then(() => setLoading(false))
       // eslint-disable-next-line no-console
       .catch((error) => console.log(error.message));

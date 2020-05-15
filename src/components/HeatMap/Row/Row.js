@@ -22,7 +22,6 @@ export default function Row({
             itemsNumber={hourData.length}
             hour={hour}
             weekDay={weekDay}
-            hourData={hourData}
           />
         ))
       }

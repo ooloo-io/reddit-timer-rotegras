@@ -7,13 +7,12 @@ import { Wrapper } from './Cell.styles';
 
 function Cell({
 // eslint-disable-next-line no-shadow
-  itemsNumber, weekDay, hour, activeCell, setActiveCell, hourData, setHourPosts,
+  itemsNumber, weekDay, hour, activeCell, setActiveCell,
 }) {
-  const isActive = activeCell[0] === weekDay && activeCell[1] === hour;
+  const isActive = activeCell.day === weekDay && activeCell.hour === hour;
 
   const handleClick = () => {
-    setActiveCell([weekDay, hour]);
-    setHourPosts(hourData);
+    setActiveCell({ day: weekDay, hour });
   };
 
   return (
@@ -32,14 +31,8 @@ Cell.propTypes = {
   itemsNumber: PropTypes.number.isRequired,
   weekDay: PropTypes.number.isRequired,
   hour: PropTypes.number.isRequired,
-  activeCell: PropTypes.arrayOf(PropTypes.number),
+  activeCell: PropTypes.shape(PropTypes.object.isRequired).isRequired,
   setActiveCell: PropTypes.func.isRequired,
-  setHourPosts: PropTypes.func.isRequired,
-  hourData: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-Cell.defaultProps = {
-  activeCell: [null, null],
 };
 
 const mapStateToProps = (state) => ({ activeCell: state.activeCell });
