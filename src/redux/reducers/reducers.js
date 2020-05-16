@@ -16,8 +16,7 @@ function groupPostsByWeekdayAndHour(items) {
     const clientDate = (item.data.created_utc + timezoneDifference()) * 1000;
     const date = new Date(clientDate);
     const day = date.getDay();
-    const time = Number((`0${date.getHours()}`).slice(-2));
-    // eslint-disable-next-line
+    const time = date.getHours();
     sortPosts[day][time] = sortPosts[day][time].concat(item.data);
   });
 
