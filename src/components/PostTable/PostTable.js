@@ -12,9 +12,9 @@ const { linkPrefix } = config.postTable;
 function PostTable({ activeCell, data }) {
   const { day, hour } = activeCell;
 
-  const timeToMiliseconds = 1000;
+  const TIME_TO_MILISECONDS = 1000;
   const timeToUserTimezone = (utcTime) => (
-    new Date((utcTime + timezoneDifference) * timeToMiliseconds).getMinutes()
+    new Date((utcTime + timezoneDifference) * TIME_TO_MILISECONDS).getMinutes()
   );
   const compareCreationTime = (a, b) => (
     timeToUserTimezone(a.created_utc) - timeToUserTimezone(b.created_utc)
@@ -38,7 +38,7 @@ function PostTable({ activeCell, data }) {
         </Cell>
         <Cell cellName="time">
           {
-            new Date((post.created_utc + timezoneDifference) * 1000)
+            new Date((post.created_utc + timezoneDifference) * TIME_TO_MILISECONDS)
               .toLocaleString('en-US', {
                 hour: 'numeric', minute: 'numeric', hour12: true,
               }).toLowerCase()

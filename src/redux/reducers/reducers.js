@@ -12,9 +12,10 @@ const initialState = {
 
 function groupPostsByWeekdayAndHour(items) {
   const sortPosts = new Array(7).fill([]).map(() => new Array(24).fill([]));
+  const TIME_TO_MILISECONDS = 1000;
 
   items.forEach((item) => {
-    const clientDate = (item.data.created_utc + timezoneDifference) * 1000;
+    const clientDate = (item.data.created_utc + timezoneDifference) * TIME_TO_MILISECONDS;
     const date = new Date(clientDate);
     const day = date.getDay();
     const time = date.getHours();
