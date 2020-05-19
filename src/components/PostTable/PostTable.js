@@ -24,58 +24,62 @@ function PostTable({ activeCell, data }) {
     ? [...data[day][hour]].sort(compareCreationTime)
     : false;
 
+  const Table = () => (
+    posts.map((post) => (
+      <Row key={post.id}>
+        <Cell cellName="title">
+          <Link
+            href={`${linkPrefix}${post.permalink}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {post.title}
+          </Link>
+        </Cell>
+        <Cell cellName="time">
+          {
+            new Date((post.created_utc + timezoneDifference) * 1000)
+              .toLocaleString('en-US', {
+                hour: 'numeric', minute: 'numeric', hour12: true,
+              }).toLowerCase()
+          }
+        </Cell>
+        <Cell cellName="score">
+          {post.num_comments}
+        </Cell>
+        <Cell cellName="comments">
+          {post.score}
+        </Cell>
+        <Cell cellName="author">
+          {
+            post.author
+              ? (
+                <Link
+                  href={`${linkPrefix}/user/${post.author}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {post.author}
+                </Link>
+              )
+              : '[deleted]'
+          }
+        </Cell>
+      </Row>
+    ))
+  );
+
   return (
     <Wrapper>
       {
-        posts && (
+        posts.length > 0 && (
           <>
             <Title> Posts </Title>
             <Header />
+            <Table />
           </>
         )
       }
-      { posts && posts.map((post) => (
-        <Row key={post.id}>
-          <Cell cellName="title">
-            <Link
-              href={`${linkPrefix}${post.permalink}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              { post.title }
-            </Link>
-          </Cell>
-          <Cell cellName="time">
-            {
-              new Date((post.created_utc + timezoneDifference) * 1000)
-                .toLocaleString('en-US', {
-                  hour: 'numeric', minute: 'numeric', hour12: true,
-                }).toLowerCase()
-            }
-          </Cell>
-          <Cell cellName="score">
-            {post.num_comments}
-          </Cell>
-          <Cell cellName="comments">
-            {post.score}
-          </Cell>
-          <Cell cellName="author">
-            {
-              post.author
-                ? (
-                  <Link
-                    href={`${linkPrefix}/user/${post.author}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {post.author}
-                  </Link>
-                )
-                : '[deleted]'
-            }
-          </Cell>
-        </Row>
-      ))}
     </Wrapper>
   );
 }
