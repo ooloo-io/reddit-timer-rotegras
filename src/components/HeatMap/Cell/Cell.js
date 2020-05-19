@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setActiveCell } from '../../../redux/actions/actions';
 import { Wrapper } from './Cell.styles';
 
 
-export default function Cell({
-  itemsNumber, weekDay, hour, activeCell, onCellClick,
+function Cell({
+// eslint-disable-next-line no-shadow
+  itemsNumber, weekDay, hour, activeCell, setActiveCell,
 }) {
-  const isActive = activeCell[0] === weekDay && activeCell[1] === hour;
+  const isActive = activeCell.day === weekDay && activeCell.hour === hour;
 
   const handleClick = () => {
-    onCellClick(weekDay, hour);
+    setActiveCell({ day: weekDay, hour });
   };
 
   return (
@@ -24,11 +27,17 @@ export default function Cell({
   );
 }
 
-
 Cell.propTypes = {
   itemsNumber: PropTypes.number.isRequired,
   weekDay: PropTypes.number.isRequired,
   hour: PropTypes.number.isRequired,
-  activeCell: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-  onCellClick: PropTypes.func.isRequired,
+  activeCell: PropTypes.shape(PropTypes.object.isRequired).isRequired,
+  setActiveCell: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = (state) => ({ activeCell: state.activeCell });
+
+const mapDispatchToProps = { setActiveCell };
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cell);
