@@ -7,6 +7,7 @@ import InputForm from '../../components/InputForm';
 import Headline from '../../components/Headline';
 import Spinner from '../../components/Spinner';
 import HeatMap from '../../components/HeatMap';
+import PostTable from '../../components/PostTable';
 
 import { setData, setActiveCell } from '../../redux/actions/actions';
 
@@ -79,6 +80,7 @@ function Search({ setData, setActiveCell }) {
       {
         !loading && <HeatMap />
       }
+      <PostTable />
     </Page>
   );
 }

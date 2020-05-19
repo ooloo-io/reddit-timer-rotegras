@@ -60,6 +60,23 @@ const theme = {
       10: '#3984a3',
     },
   },
+  postTable: {
+    width: '786px',
+    rowHeight: '34px',
+    cellWidth: {
+      title: '373px',
+      time: '114px',
+      score: '64px',
+      comments: '104px',
+      author: '129px',
+    },
+    padding: {
+      tableCell: '9px 10px 10px 12px',
+    },
+    textColor: '#000000',
+    linkColor: '#0087ff',
+    borderColor: '#dddddd',
+  },
 };
 
 
