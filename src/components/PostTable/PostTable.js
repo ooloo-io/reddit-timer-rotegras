@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import config, { timezoneDifference } from '../../config';
+import config from '../../config';
 import Header from './Header';
 import {
   Wrapper, Title, Row, Cell, Link,
@@ -9,20 +9,31 @@ import {
 
 const { linkPrefix } = config.postTable;
 
-function PostTable({ activeCell, data }) {
+function PostTable({ activeCell, groupedPosts }) {
   const { day, hour } = activeCell;
 
   const TIME_TO_MILISECONDS = 1000;
-  const timeToUserTimezone = (utcTime) => (
-    new Date((utcTime + timezoneDifference) * TIME_TO_MILISECONDS).getMinutes()
-  );
+  const NO_AUTHOR = '[deleted]';
+
   const compareCreationTime = (a, b) => (
-    timeToUserTimezone(a.created_utc) - timeToUserTimezone(b.created_utc)
+    a.created_utc - b.created_utc
   );
 
-  const posts = (day > -1 && day !== null)
-    ? [...data[day][hour]].sort(compareCreationTime)
-    : false;
+  const formatTimePosted = (creationTime) => {
+    const visitorTime = new Date(creationTime * TIME_TO_MILISECONDS)
+      .toLocaleString('en-US', {
+        hour: 'numeric', minute: 'numeric', hour12: true,
+      }).toLowerCase();
+    return visitorTime;
+  };
+
+  const posts = (day !== null)
+    ? [...groupedPosts[day][hour]].sort(compareCreationTime)
+    : [];
+
+  if (posts.length === 0) {
+    return null;
+  }
 
   const Table = () => (
     posts.map((post) => (
@@ -38,10 +49,7 @@ function PostTable({ activeCell, data }) {
         </Cell>
         <Cell cellName="time">
           {
-            new Date((post.created_utc + timezoneDifference) * TIME_TO_MILISECONDS)
-              .toLocaleString('en-US', {
-                hour: 'numeric', minute: 'numeric', hour12: true,
-              }).toLowerCase()
+            formatTimePosted(post.created_utc)
           }
         </Cell>
         <Cell cellName="score">
@@ -52,17 +60,17 @@ function PostTable({ activeCell, data }) {
         </Cell>
         <Cell cellName="author">
           {
-            post.author
-              ? (
+            post.author === NO_AUTHOR
+              ? NO_AUTHOR
+              : (
                 <Link
-                  href={`${linkPrefix}/user/${post.author}`}
+                  href={`${linkPrefix}user/${post.author}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {post.author}
                 </Link>
               )
-              : '[deleted]'
           }
         </Cell>
       </Row>
@@ -71,26 +79,20 @@ function PostTable({ activeCell, data }) {
 
   return (
     <Wrapper>
-      {
-        posts.length > 0 && (
-          <>
-            <Title> Posts </Title>
-            <Header />
-            <Table />
-          </>
-        )
-      }
+      <Title> Posts </Title>
+      <Header />
+      <Table />
     </Wrapper>
   );
 }
 
 PostTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.array.isRequired).isRequired,
+  groupedPosts: PropTypes.arrayOf(PropTypes.array.isRequired).isRequired,
   activeCell: PropTypes.shape(PropTypes.object.isRequired).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  data: state.data,
+  groupedPosts: state.groupedPosts,
   activeCell: state.activeCell,
 });
 

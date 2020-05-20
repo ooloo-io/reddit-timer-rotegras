@@ -9,6 +9,5 @@ const config = {
   },
 };
 
-const timezoneDifference = new Date().getTimezoneOffset() * 60;
 
-export { config, timezoneDifference };
+export default config;

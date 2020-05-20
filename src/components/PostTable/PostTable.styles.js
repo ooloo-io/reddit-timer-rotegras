@@ -9,15 +9,15 @@ const Row = styled.div`
   display: flex;
   width: ${({ theme }) => theme.postTable.width};
   color: ${({ theme }) => theme.postTable.headerColor};
-  border-right: 1px solid ${({ theme }) => theme.postTable.borderColor};
+  border-right: 1px solid ${({ theme }) => theme.colors.postTableBorder};
 `;
 
 const Cell = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-left: 1px solid ${({ theme }) => theme.postTable.borderColor};
-  border-bottom: 1px solid ${({ theme }) => theme.postTable.borderColor};
+  border-left: 1px solid ${({ theme }) => theme.colors.postTableBorder};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.postTableBorder};
   height: ${({ theme }) => theme.postTable.rowHeight};
   padding: ${({ theme }) => theme.postTable.padding.tableCell};
   width: ${(props) => props.theme.postTable.cellWidth[props.cellName]};
@@ -26,12 +26,13 @@ const Cell = styled.div`
   font-size: ${({ theme }) => theme.textsize.smaller};
   font-weight: 400;
   text-align: left;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const Link = styled.a`
   font-size: ${({ theme }) => theme.textsize.smaller};
+  color: ${({ theme }) => theme.colors.link};
   font-weight: 400;
-  align-text: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -41,6 +42,7 @@ const Link = styled.a`
 
 const Title = styled.h2`
   width: ${({ theme }) => theme.postTable.width};
+  color: ${({ theme }) => theme.colors.black};
   font-weight: 500;
   text-align: left;
   margin-top: 0;

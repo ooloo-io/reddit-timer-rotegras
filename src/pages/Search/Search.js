@@ -9,7 +9,7 @@ import Spinner from '../../components/Spinner';
 import HeatMap from '../../components/HeatMap';
 import PostTable from '../../components/PostTable';
 
-import { setData, setActiveCell } from '../../redux/actions/actions';
+import { groupPosts, setActiveCell } from '../../redux/actions/actions';
 
 
 const NUM_POSTS_TO_FETCH = 500;
@@ -50,7 +50,7 @@ async function fetchPosts(subredditName, after = null, page = 1) {
 
 
 // eslint-disable-next-line no-shadow
-function Search({ setData, setActiveCell }) {
+function Search({ groupPosts, setActiveCell }) {
   const { slug } = useParams();
 
   const [loading, setLoading] = useState(true);
@@ -60,11 +60,11 @@ function Search({ setData, setActiveCell }) {
     setLoading(true);
     setActiveCell({ day: null, hour: null });
     fetchPosts(slug)
-      .then((posts) => setData(posts))
+      .then((posts) => groupPosts(posts))
       .then(() => setLoading(false))
       // eslint-disable-next-line no-console
       .catch((error) => console.log(error.message));
-  }, [slug, setData, setActiveCell]);
+  }, [slug, groupPosts, setActiveCell]);
 
   return (
     <Page>
@@ -85,10 +85,10 @@ function Search({ setData, setActiveCell }) {
   );
 }
 
-const mapDispatchToProps = { setData, setActiveCell };
+const mapDispatchToProps = { groupPosts, setActiveCell };
 
 Search.propTypes = {
-  setData: PropTypes.func.isRequired,
+  groupPosts: PropTypes.func.isRequired,
   setActiveCell: PropTypes.func.isRequired,
 };
 

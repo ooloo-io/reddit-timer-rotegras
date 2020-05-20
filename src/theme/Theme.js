@@ -18,6 +18,7 @@ const theme = {
     borderDark: '#1e2537',
     backgroundBottom: '#e9e9e9',
     backgroundTop: '#fefefe',
+    postTableBorder: '#dddddd',
   },
   fonts: {
     primary: 'Montserrat',
@@ -73,9 +74,6 @@ const theme = {
     padding: {
       tableCell: '9px 10px 10px 12px',
     },
-    textColor: '#000000',
-    linkColor: '#0087ff',
-    borderColor: '#dddddd',
   },
 };
 

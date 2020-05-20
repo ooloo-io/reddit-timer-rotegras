@@ -1,1 +1,1 @@
-export { config as default, timezoneDifference } from './config';
+export { default } from './config';
