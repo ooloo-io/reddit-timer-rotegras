@@ -64,7 +64,7 @@ function PostTable({ activeCell, groupedPosts }) {
               ? NO_AUTHOR
               : (
                 <Link
-                  href={`${linkPrefix}user/${post.author}`}
+                  href={`${linkPrefix}/user/${post.author}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

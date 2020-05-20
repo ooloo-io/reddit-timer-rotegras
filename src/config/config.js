@@ -5,7 +5,7 @@ const config = {
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
   ],
   postTable: {
-    linkPrefix: 'https://reddit.com/',
+    linkPrefix: 'https://reddit.com',
   },
 };
 
