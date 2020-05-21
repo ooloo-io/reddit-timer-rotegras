@@ -1,10 +1,10 @@
 import {
-  SET_DATA,
+  GROUP_POSTS,
   SET_ACTIVECELL,
 } from '../constants/actionTypes';
 
-export function setData(payload) {
-  return { type: SET_DATA, payload };
+export function groupPosts(payload) {
+  return { type: GROUP_POSTS, payload };
 }
 
 export function setActiveCell(payload) {

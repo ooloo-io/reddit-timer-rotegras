@@ -4,6 +4,10 @@ const config = {
   dayLabels: [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
   ],
+  postTable: {
+    linkPrefix: 'https://reddit.com',
+  },
 };
+
 
 export default config;

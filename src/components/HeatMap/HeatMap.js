@@ -8,15 +8,14 @@ import Footer from './Footer';
 import { Wrapper } from './HeatMap.styles';
 
 
-function HeatMap({ data }) {
+function HeatMap({ groupedPosts }) {
   const { dayLabels } = config;
 
   return (
     <Wrapper>
       <Header />
       {
-        // tableData.map((weekDayData, weekDay) => (
-        data.map((weekDayData, weekDay) => (
+        groupedPosts.map((weekDayData, weekDay) => (
           <Row
             key={dayLabels[weekDay]}
             weekDayData={weekDayData}
@@ -30,10 +29,10 @@ function HeatMap({ data }) {
   );
 }
 
-const mapStateToProps = (state) => ({ data: state.data });
+const mapStateToProps = (state) => ({ groupedPosts: state.groupedPosts });
 
 HeatMap.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.any).isRequired,
+  groupedPosts: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 

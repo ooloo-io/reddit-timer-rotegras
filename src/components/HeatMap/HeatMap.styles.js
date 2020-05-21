@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: ${({ theme }) => theme.heatmap.width};
-  margin-bottom: 45px;
+  margin-bottom: 31px;
   margin-top: 50px;
 `;
 

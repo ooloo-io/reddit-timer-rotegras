@@ -18,6 +18,7 @@ const theme = {
     borderDark: '#1e2537',
     backgroundBottom: '#e9e9e9',
     backgroundTop: '#fefefe',
+    postTableBorder: '#dddddd',
   },
   fonts: {
     primary: 'Montserrat',
@@ -58,6 +59,20 @@ const theme = {
       8: '#5cb391',
       9: '#5aad8c',
       10: '#3984a3',
+    },
+  },
+  postTable: {
+    width: '786px',
+    rowHeight: '34px',
+    cellWidth: {
+      title: '373px',
+      time: '114px',
+      score: '64px',
+      comments: '104px',
+      author: '129px',
+    },
+    padding: {
+      tableCell: '9px 10px 10px 12px',
     },
   },
 };
